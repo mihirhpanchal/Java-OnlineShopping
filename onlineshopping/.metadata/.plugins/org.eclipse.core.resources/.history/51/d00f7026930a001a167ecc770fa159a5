@@ -1,0 +1,11 @@
+package lti.onlineshopping.service;
+
+import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Product;
+
+public interface ServiceIntf {
+	
+	public boolean insertProduct(Product product);
+	
+	public Category getCategory(String categoryname);
+}

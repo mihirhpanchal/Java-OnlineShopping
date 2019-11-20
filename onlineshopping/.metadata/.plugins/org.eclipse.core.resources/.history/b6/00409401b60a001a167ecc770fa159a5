@@ -1,0 +1,62 @@
+package lti.onlineshopping.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Product;
+import lti.onlineshopping.model.SubCategory;
+import lti.onlineshopping.service.ServiceIntf;
+  
+@Controller("myController")
+public class MyController {
+	@Autowired
+	ServiceIntf myService;
+	@RequestMapping(value="/addproduct",method=RequestMethod.POST)
+	public ModelAndView insertContact(HttpServletRequest request,HttpServletResponse response)
+	{
+		String product_name=request.getParameter("product_name");
+		String brand=request.getParameter("brand");
+		String product_description=request.getParameter("product_description");
+		float unit_price=Float.parseFloat(request.getParameter("unit_price"));
+		int quantity=Integer.parseInt(request.getParameter("quantity"));
+		String categoryname=request.getParameter("category");
+		String subcategoryname=request.getParameter("subcategory");
+		
+		Product product=new Product();
+		product.setProduct_name(product_name);
+		product.setBrand(brand);
+		product.setProduct_description(product_description);
+		product.setUnit_price(unit_price);
+		product.setQuantity(quantity);
+		//product.setCategory(category);
+		
+		Category category = myService.getCategory(categoryname);
+		
+		SubCategory subcategory = myService.getSubCategory(subcategoryname);
+		
+		boolean flag=myService.insertProduct(product);
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("product_name",product_name);
+		mav.addObject("product_description",product_description);
+		mav.addObject("unit_price",unit_price);
+		mav.addObject("quantity",quantity);
+		mav.addObject("category",category);
+		mav.addObject("subcategory",subcategory);
+		if(flag)
+		{
+			mav.addObject("status","Thanks msg is accepted");
+		}else{
+			mav.addObject("status","sorry msg is not accepted");
+		}
+		mav.setViewName("");
+		return mav;
+
+	}
+}

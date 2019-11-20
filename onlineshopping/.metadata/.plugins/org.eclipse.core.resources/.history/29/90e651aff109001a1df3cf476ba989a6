@@ -1,0 +1,7 @@
+package lti.onlineshopping.controller;
+
+
+@Controller("myController")
+public class MyController {
+
+}

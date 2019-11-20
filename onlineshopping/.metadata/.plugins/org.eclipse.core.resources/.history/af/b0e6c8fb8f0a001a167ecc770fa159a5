@@ -1,0 +1,22 @@
+package lti.onlineshopping.dao;
+
+import org.springframework.stereotype.Repository;
+
+import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Product;
+
+@Repository("MyDao")
+public class DaoImpl implements DaoIntf{
+
+	public boolean insertProduct(Product product) {
+		System.out.println("Dao called");
+		return true;
+	}
+
+	public Category getCategory(String categoryname) {
+		System.out.println("Category Dao called");
+		
+		return null;
+	}
+
+}

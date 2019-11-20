@@ -1,0 +1,50 @@
+package lti.onlineshopping.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class SubCategory {
+
+	@Id
+	private String sub_id;
+	private String sub_name;
+	private String sub_desc;
+    @ManyToOne
+    @JoinColumn(name="category_id")
+    private Category category;
+	public String getSub_id() {
+		return sub_id;
+	}
+	public void setSub_id(String sub_id) {
+		this.sub_id = sub_id;
+	}
+	public String getSub_desc() {
+		return sub_desc;
+	}
+	public void setSub_desc(String sub_desc) {
+		this.sub_desc = sub_desc;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	public String getSub_name() {
+		return sub_name;
+	}
+	public void setSub_name(String sub_name) {
+		this.sub_name = sub_name;
+	}
+	public SubCategory() {
+		super();
+	}
+    
+    
+}

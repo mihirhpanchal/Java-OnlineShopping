@@ -1,0 +1,32 @@
+package lti.onlineshopping.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Product;
+
+@Repository("MyDao")
+public class DaoImpl implements DaoIntf{
+
+	public boolean insertProduct(Product product) {
+		System.out.println("Dao called");
+		return true;
+	}
+
+	public Category getCategory(String categoryname) {
+		System.out.println("Category Dao called");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("select  c from Category c where c.category_name=:cata");
+		query.setParameter("cata", categoryname);
+		@SuppressWarnings("unused")
+		Category category=(Category)query.getSingleResult();
+		return category;
+	}
+
+}

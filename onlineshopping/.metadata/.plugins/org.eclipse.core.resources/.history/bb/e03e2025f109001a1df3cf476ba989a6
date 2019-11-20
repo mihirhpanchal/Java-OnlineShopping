@@ -1,0 +1,5 @@
+package lti.onlineshopping.dao;
+
+public class DaoImpl {
+
+}

@@ -1,0 +1,39 @@
+package lti.onlineshopping.model;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+public class Product {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String product_id;
+	private String product_name;
+	private String brand;
+	private String product_description;
+	private float unit_price;
+	private int quantity;    
+	@ManyToOne
+    @JoinColumn(name="category_id")
+    private Category category;
+	@ManyToOne
+    @JoinColumn(name="sub_id")
+    private SubCategory subcategory;
+	private String supplier_id;
+	private int purchases;
+
+	@Temporal(TemporalType.DATE)
+	private Date date_added;
+	
+	
+	
+	
+}

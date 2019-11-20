@@ -1,0 +1,12 @@
+package lti.onlineshopping.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller("myController")
+public class MyController {
+	@Autowired
+	MyServiceIntf myService;
+	@RequestMapping(value="/contact",method=RequestMethod.POST)
+	public ModelAndView insertContact(HttpServletRequest request,HttpServletResponse response)
+	{
+}

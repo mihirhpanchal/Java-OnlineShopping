@@ -1,0 +1,8 @@
+package lti.onlineshopping.service;
+
+import lti.onlineshopping.model.Product;
+
+public interface ServiceIntf {
+	
+	private boolean insertProduct(Product product);
+}

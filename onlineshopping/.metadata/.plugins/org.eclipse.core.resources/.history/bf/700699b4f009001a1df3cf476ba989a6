@@ -1,0 +1,7 @@
+package lti.onlineshopping.service;
+
+public class ServiceIntf {
+
+	
+	private boolean insertProduct(Product product);
+}

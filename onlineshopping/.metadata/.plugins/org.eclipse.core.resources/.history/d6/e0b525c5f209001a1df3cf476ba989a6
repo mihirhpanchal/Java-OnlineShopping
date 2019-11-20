@@ -1,0 +1,56 @@
+package lti.onlineshopping.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import lti.onlineshopping.model.Product;
+import lti.onlineshopping.service.ServiceIntf;
+
+@Controller("myController")
+public class MyController {
+	@Autowired
+	ServiceIntf myService;
+	@RequestMapping(value="/contact",method=RequestMethod.POST)
+	public ModelAndView insertContact(HttpServletRequest request,HttpServletResponse response)
+	{
+		String product_name=request.getParameter("product_name");
+		String brand=request.getParameter("brand");
+		String product_description=request.getParameter("product_description");
+		String unit_price=request.getParameter("unit_price");
+		int quantity=request.getParameter("brand");
+		String brand=request.getParameter("brand");
+		String brand=request.getParameter("brand");
+		
+		Product product=new Product();
+		product.setProduct_name(product_name);
+		product.setBrand(brand);
+		product.setProduct_description(product_description);
+		product.setUnit_price(unit_price);
+		product.setQuantity(quantity);
+		product.setCategory(category);
+		product.setSubcategory(subcategory);
+		
+		
+		boolean flag=myService.insertContact(contact);
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("name",name);
+		mav.addObject("info",info);
+		if(flag)
+		{
+			mav.addObject("status","Thanks msg is accepted");
+		}else{
+			mav.addObject("status","sorry msg is not accepted");
+		}
+		mav.setViewName("contactreport");
+		return mav;
+
+		
+		
+	}
+}

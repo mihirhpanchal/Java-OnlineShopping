@@ -1,0 +1,9 @@
+package lti.onlineshopping.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class SubCategory {
+
+	
+}

@@ -1,0 +1,21 @@
+package lti.onlineshopping.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import lti.onlineshopping.dao.DaoImpl;
+import lti.onlineshopping.dao.DaoIntf;
+import lti.onlineshopping.model.Product;
+
+public class ServiceImpl implements ServiceIntf {
+
+	@Autowired
+	DaoIntf myDao;
+	public boolean insertProduct(Product product) {
+		System.out.println("Service is called");
+		boolean flag=myDao.insertProduct(product);
+		
+		return flag;
+	}
+
+	
+}
