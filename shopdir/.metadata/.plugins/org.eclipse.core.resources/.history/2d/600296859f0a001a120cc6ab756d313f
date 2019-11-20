@@ -1,0 +1,12 @@
+package Service;
+
+import java.util.List;
+
+import model.Users;
+
+public interface UserServiceInt {
+	
+	public List<Users> getUsers();
+	public Users getUser(String id);
+
+}
