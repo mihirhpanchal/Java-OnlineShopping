@@ -12,3 +12,6 @@
 1574312590051	Rename type 'UserDao'
 1574312716969	Rename type 'RetailerService'
 1574312723203	Rename type 'UserService'
+1574317734320	Delete elements
+1574317749601	Delete elements
+1574320271303	Move 'home.jsp' to 'webapp'
