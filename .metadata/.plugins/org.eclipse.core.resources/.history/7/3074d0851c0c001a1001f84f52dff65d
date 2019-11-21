@@ -1,0 +1,25 @@
+package lti.onlineshopping.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import lti.onlineshopping.dao.UserDaoIntf;
+import lti.onlineshopping.model.User;
+
+
+@Service("myService")
+public class UserService implements UserDaoIntf{
+
+	@Autowired
+	UserDaoIntf myDao;
+	
+	public boolean insertUser(User user) {
+		boolean flag = myDao.insertUser(user);
+		return flag;
+	}
+	
+	public User validateUser(User user) {
+	    return myDao.validateUser(user);
+	  }
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.dao.ReatilerDaoInt"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.service.RetailerServiceInt"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.model.Retailer"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.dao.UserDao"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.service.UserService"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.model.User"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.dao.UserDaoIntf"/>
+<fullyQualifiedTypeName name="lti.onlineshopping.service.UserServiceIntf"/>
+</qualifiedTypeNameHistroy>

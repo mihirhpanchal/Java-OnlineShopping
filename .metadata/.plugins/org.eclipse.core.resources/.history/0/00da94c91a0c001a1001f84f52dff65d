@@ -1,0 +1,11 @@
+<html>
+<body>
+<h2>Online Shopping</h2>
+<a href="viewretailers.jsp">Retailers Details</a><br>
+<a href="regproduct.html">Register Product</a><br>
+<a href="viewallprod.jsp">View All Products</a><br>
+<a href="userdetails.jsp">User Details</a><br>
+<a href="signup.jsp">Register User</a><br>
+<a href="login.jsp">Login</a><br>
+</body>
+</html>

@@ -6,7 +6,7 @@ import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 
-public interface DaoIntf {
+public interface ProductDaoIntf {
 	
 	public boolean insertProduct(Product product);
 	

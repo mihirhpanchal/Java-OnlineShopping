@@ -1,0 +1,10 @@
+<html>
+<body>
+<h2>Online Shopping</h2>
+<a href="viewretailers.do">Retailers Details</a><br>
+<a href="regproduct.html">Register Product</a><br>
+<a href="viewallprod.do">View All Products</a><br>
+<a href="userdetails.do">User Details</a><br>
+<a href="signup.do">Register User</a>
+</body>
+</html>

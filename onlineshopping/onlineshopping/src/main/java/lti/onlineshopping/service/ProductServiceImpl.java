@@ -5,37 +5,37 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lti.onlineshopping.dao.DaoIntf;
+import lti.onlineshopping.dao.ProductDaoIntf;
 import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 
-@Service("myService")
-public class ServiceImpl implements ServiceIntf {
+@Service("productService")
+public class ProductServiceImpl implements ProductServiceIntf {
 
 	@Autowired
-	DaoIntf myDao;
+	ProductDaoIntf productDao;
 	public boolean insertProduct(Product product) {
 		System.out.println("Service is called");
-		boolean flag=myDao.insertProduct(product);
+		boolean flag=productDao.insertProduct(product);
 		
 		return flag;
 	}
 
 	public Category getCategory(String categoryname){
 		System.out.println("Category service is called");
-		Category c =myDao.getCategory(categoryname);
+		Category c =productDao.getCategory(categoryname);
 		return c;
 	}
 
 	public SubCategory getSubCategory(String scategoryname) {
 		System.out.println("Category service is called");
-		SubCategory s =myDao.getSubCategory(scategoryname);
+		SubCategory s =productDao.getSubCategory(scategoryname);
 		return s;
 	}
 	
 	public List<Object[]> getUsers() {
-		List<Object[]> list = myDao.getProducts();
+		List<Object[]> list = productDao.getProducts();
 		return list;
 	}
 	

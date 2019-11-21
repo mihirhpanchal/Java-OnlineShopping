@@ -16,12 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
-import lti.onlineshopping.service.ServiceIntf;
+import lti.onlineshopping.service.ProductServiceIntf;
   
-@Controller("myController")
-public class MyController {
+@Controller("productController")
+public class ProductController {
 	@Autowired
-	ServiceIntf myService;
+	ProductServiceIntf productService;
 	@RequestMapping(value="/insertproduct",method=RequestMethod.POST)
 	public ModelAndView insertContact(HttpServletRequest request,HttpServletResponse response)
 	{
@@ -33,10 +33,10 @@ public class MyController {
 		String categoryname=request.getParameter("category");
 		String subcategoryname=request.getParameter("subcategory");
 		
-		Category category = myService.getCategory(categoryname);
+		Category category = productService.getCategory(categoryname);
 		String cid = category.getCategory_id();
 
-		SubCategory subcategory = myService.getSubCategory(subcategoryname);
+		SubCategory subcategory = productService.getSubCategory(subcategoryname);
 		String sid = subcategory.getSub_id();
 		
 		Calendar cal = Calendar.getInstance();
@@ -55,7 +55,7 @@ public class MyController {
 		product.setDate_added(date);
 		
 		
-		boolean flag=myService.insertProduct(product);
+		boolean flag= productService.insertProduct(product);
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("product_name",product_name);
 		mav.addObject("product_description",product_description);
@@ -77,7 +77,7 @@ public class MyController {
 	@RequestMapping(value="/viewallprod", method=RequestMethod.GET)
 	public ModelAndView viewusers(HttpServletRequest request,HttpServletResponse response){
 		
-		List<Object[]> products = myService.getUsers();
+		List<Object[]> products = productService.getUsers();
 		System.out.println(products.size());
 		ModelAndView mav = new ModelAndView("viewallprod");
 		mav.addObject("products", products);

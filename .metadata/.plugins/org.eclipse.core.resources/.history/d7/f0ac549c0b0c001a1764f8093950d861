@@ -1,0 +1,5 @@
+package lti.onlineshopping.service;
+
+public interface UserServiceIntf {
+
+}
