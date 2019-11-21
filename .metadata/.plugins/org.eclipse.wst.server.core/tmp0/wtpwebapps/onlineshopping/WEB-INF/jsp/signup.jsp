@@ -58,15 +58,22 @@ input:hover,
 <div class="container">
 
 <div class="col" style="position:absolute;top:90px;left:275px;width:50%;z-index:105">
-<form action="signup.do" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-	 <input type="text" name="cno" placeholder="Mobile Number" minlength="10" maxlength="10" required>
-	 <input type="email" name="email" placeholder="email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Signup">
-        <!-- <input type="submit" value="Signup"> -->
+	<form name="myForm" action="home.jsp">
+        <input type="text" name="username" placeholder="Username" autofoccus required>
+
+	 <input type="tel" pattern="[789][0-9]{9}" name="Mobile Number" placeholder="Mobile Number" autofoccus required
+		title="Values should be Numeric and It should be of 10 digits only">
+
+	 <input type="email" name="email" placeholder="email" autofoccus required
+		title="The required format is aa@bb.cc">
+
+        <input type="password" name="password" placeholder="Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"  required>
+
+
+
+	 <input type="password" name="confirmpassword" placeholder="Confirm Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"  required">
+        <input type="submit" value="Signup" >
 </form>
- <p style="font-style: italic; color: red;">${status}</p>
 	</div>
 <div class="signup">&nbsp;&nbsp;&nbsp;&nbsp;Signup<br>
 <span style="position:absolute;top:120px;left:30px;font-size:21px;line-height:22px;width:200px">We do not share your personal details with anyone
