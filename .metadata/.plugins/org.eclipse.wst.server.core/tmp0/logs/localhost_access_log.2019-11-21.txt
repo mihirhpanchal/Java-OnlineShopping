@@ -37,3 +37,10 @@
 127.0.0.1 - - [21/Nov/2019:11:58:28 +0530] "GET / HTTP/1.1" 404 1074
 0:0:0:0:0:0:0:1 - - [21/Nov/2019:11:58:29 +0530] "GET /onlineshopping/WEB-INF/jsp/welcome.jsp HTTP/1.1" 404 1047
 0:0:0:0:0:0:0:1 - - [21/Nov/2019:11:58:44 +0530] "GET /onlineshopping/WEB-INF/jsp/about.jsp HTTP/1.1" 404 1047
+127.0.0.1 - - [21/Nov/2019:11:59:25 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [21/Nov/2019:11:59:26 +0530] "GET /onlineshopping/index.jsp HTTP/1.1" 200 342
+0:0:0:0:0:0:0:1 - - [21/Nov/2019:11:59:47 +0530] "GET /onlineshopping/viewretailers.do HTTP/1.1" 200 292
+0:0:0:0:0:0:0:1 - - [21/Nov/2019:12:00:07 +0530] "GET /onlineshopping/viewallprod.do HTTP/1.1" 200 1079
+0:0:0:0:0:0:0:1 - - [21/Nov/2019:13:01:13 +0530] "GET /onlineshopping HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [21/Nov/2019:13:01:13 +0530] "GET /onlineshopping/ HTTP/1.1" 200 342
+0:0:0:0:0:0:0:1 - - [21/Nov/2019:13:02:03 +0530] "GET /onlineshopping/viewallprod.do HTTP/1.1" 200 1079
