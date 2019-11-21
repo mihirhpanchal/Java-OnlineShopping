@@ -60,7 +60,8 @@ input:hover,
 <div class="col" style="position:absolute;top:150px;left:275px;width:50%;z-index:105">
 <form action="loginProcess.do">
         <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="password"  pattern="^\S{6,}$" name="password" placeholder="Password" required
+		title="Please enter the password having atleast one uppercase,lowercase and numeric value">
         <input type="submit" value="Login">
 </form>
 	<p style="font-style: italic; color: red;">${message}</p>
