@@ -15,6 +15,7 @@ public class UserServiceImpl implements UserServiceIntf{
 	
 	public boolean insertUser(User user) {
 		boolean flag = userDao.insertUser(user);
+		System.out.println(flag);
 		return flag;
 	}
 	

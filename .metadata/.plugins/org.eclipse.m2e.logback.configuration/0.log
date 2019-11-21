@@ -1458,3 +1458,11 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/Shop' is not o
 2019-11-21 10:51:10,411 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2019-11-21 10:51:10,411 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-11-21 10:51:10,411 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\OnlineShopping\onlineshopping\onlineshopping\src\test\resources
+2019-11-21 11:06:03,073 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-21 11:06:03,113 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-21 11:06:03,123 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-21 11:06:03,123 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\OnlineShopping\onlineshopping\onlineshopping\src\test\resources
+2019-11-21 11:06:06,648 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-21 11:06:06,649 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-21 11:06:06,655 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-21 11:06:06,656 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\OnlineShopping\shopdir\shopping\src\test\resources
