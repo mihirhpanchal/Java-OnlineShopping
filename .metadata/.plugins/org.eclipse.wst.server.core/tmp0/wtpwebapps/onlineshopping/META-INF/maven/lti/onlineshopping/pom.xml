@@ -85,8 +85,12 @@
     <artifactId>jstl</artifactId>
     <version>1.2</version>
    </dependency>
-   
-          <dependency>
+   <dependency>
+  <groupId>taglibs</groupId>
+  <artifactId>standard</artifactId>
+  <version>1.1.2</version>
+</dependency>
+   <dependency>
 	<groupId>org.hibernate</groupId>
 	<artifactId>hibernate-core</artifactId>
 	<version>5.4.8.Final</version>

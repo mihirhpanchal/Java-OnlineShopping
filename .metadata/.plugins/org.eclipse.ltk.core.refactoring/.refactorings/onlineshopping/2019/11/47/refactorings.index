@@ -15,3 +15,12 @@
 1574317734320	Delete elements
 1574317749601	Delete elements
 1574320271303	Move 'home.jsp' to 'webapp'
+1574331817977	Move 'shared' to 'webapp'
+1574333419212	Move 'style.css' to 'css'
+1574333711492	Rename resource 'css'
+1574333720572	Rename resource 'resouces'
+1574333738609	Move 'style.css' to 'css'
+1574333909560	Rename resource 'resources'
+1574334105546	Rename resource 'static'
+1574336678109	Move 'shared' to 'jsp'
+1574336717036	Move 'shared' to 'webapp'

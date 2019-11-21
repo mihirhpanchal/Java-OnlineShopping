@@ -17,13 +17,13 @@
 			<item value="400"/>
 		</list>
 	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item value="537" key="DIALOG_X_ORIGIN"/>
+		<item value="245" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="GitCommitMessageComponent">
 		<list key="D:\OnlineShopping\.git">
-			<item value="false"/>
-			<item value="Mihir &lt;mihirp.panchal@gmail.com&gt;"/>
-			<item value="Completely merged "/>
-			<item value="Mihir &lt;mihirp.panchal@gmail.com&gt;"/>
-			<item value="cd0ea14bc2f14d3b569b80a7eb88f7f6ce218b63"/>
+			<item value="empty"/>
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
