@@ -458,3 +458,288 @@ Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/mihirh
 
 !ENTRY org.eclipse.egit.ui 4 0 2019-11-22 14:32:01.748
 !MESSAGE Can't connect to any repository: https://github.com/mihirhpanchal/OnlineShopping (https://github.com/mihirhpanchal/OnlineShopping: not authorized)
+
+!ENTRY org.eclipse.jface 2 0 2019-11-22 14:48:01.212
+!MESSAGE Ignored reentrant call while viewer is busy. This is only logged once per viewer instance, but similar calls will still be ignored.
+!STACK 0
+java.lang.RuntimeException
+	at org.eclipse.jface.viewers.ColumnViewer.checkBusy(ColumnViewer.java:761)
+	at org.eclipse.jface.viewers.ColumnViewer.refresh(ColumnViewer.java:516)
+	at org.eclipse.ui.dialogs.FilteredTree$NotifyingTreeViewer.refresh(FilteredTree.java:1240)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1478)
+	at org.eclipse.ui.dialogs.FilteredTree$NotifyingTreeViewer.refresh(FilteredTree.java:1228)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView$11.run(ReflogView.java:552)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:233)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4821)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView.onRefsChanged(ReflogView.java:549)
+	at org.eclipse.jgit.events.RefsChangedEvent.dispatch(RefsChangedEvent.java:55)
+	at org.eclipse.jgit.events.RefsChangedEvent.dispatch(RefsChangedEvent.java:47)
+	at org.eclipse.jgit.events.ListenerList.dispatch(ListenerList.java:120)
+	at org.eclipse.jgit.lib.Repository.fireEvent(Repository.java:168)
+	at org.eclipse.jgit.internal.storage.file.RefDirectory.fireRefsChanged(RefDirectory.java:1027)
+	at org.eclipse.jgit.internal.storage.file.RefDirectory.getRef(RefDirectory.java:309)
+	at org.eclipse.jgit.lib.Repository.findRef(Repository.java:1043)
+	at org.eclipse.jgit.internal.storage.file.FileRepository.getReflogReader(FileRepository.java:555)
+	at org.eclipse.jgit.api.ReflogCommand.call(ReflogCommand.java:100)
+	at org.eclipse.egit.ui.internal.reflog.ReflogViewContentProvider.getElements(ReflogViewContentProvider.java:75)
+	at org.eclipse.jface.viewers.StructuredViewer.getRawChildren(StructuredViewer.java:1001)
+	at org.eclipse.jface.viewers.ColumnViewer.getRawChildren(ColumnViewer.java:701)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getRawChildren(AbstractTreeViewer.java:1349)
+	at org.eclipse.jface.viewers.TreeViewer.getRawChildren(TreeViewer.java:341)
+	at org.eclipse.jface.viewers.StructuredViewer.getFilteredChildren(StructuredViewer.java:907)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getSortedChildren(AbstractTreeViewer.java:621)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.lambda$0(AbstractTreeViewer.java:817)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:795)
+	at org.eclipse.jface.viewers.TreeViewer.createChildren(TreeViewer.java:596)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:766)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalInitializeTree(AbstractTreeViewer.java:1538)
+	at org.eclipse.jface.viewers.TreeViewer.internalInitializeTree(TreeViewer.java:772)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.lambda$1(AbstractTreeViewer.java:1523)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1458)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:354)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1419)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:1517)
+	at org.eclipse.ui.dialogs.FilteredTree$NotifyingTreeViewer.inputChanged(FilteredTree.java:1215)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:286)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1696)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView.showReflogFor(ReflogView.java:520)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView.showReflogFor(ReflogView.java:509)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView.reactOnSelection(ReflogView.java:432)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView.access$4(ReflogView.java:403)
+	at org.eclipse.egit.ui.internal.reflog.ReflogView$9.selectionChanged(ReflogView.java:349)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.notifyListeners(SelectionService.java:259)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.notifyListeners(SelectionService.java:194)
+	at org.eclipse.ui.internal.WorkbenchPage$E4PartListener.partActivated(WorkbenchPage.java:211)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl$3.run(PartServiceImpl.java:250)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.firePartActivated(PartServiceImpl.java:247)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:757)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.switchPerspective(PartServiceImpl.java:657)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:106)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer$1.handleEvent(LazyStackRenderer.java:72)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:233)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4821)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:94)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:135)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:1)
+	at org.eclipse.e4.ui.workbench.addons.perspectiveswitcher.PerspectiveSwitcher$12.widgetSelected(PerspectiveSwitcher.java:593)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:249)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4418)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4236)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3824)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-11-22 14:48:27.320
+!MESSAGE Unable to configure onlineshopping
+!STACK 0
+org.eclipse.m2e.wtp.MarkedException: Unable to configure onlineshopping
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:98)
+	at org.eclipse.m2e.wtp.WTPProjectConfigurator.configure(WTPProjectConfigurator.java:68)
+	at org.eclipse.m2e.core.project.configurator.AbstractLifecycleMapping.configure(AbstractLifecycleMapping.java:120)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:501)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:494)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:432)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:345)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:342)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have not been satisfied.
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modifyInternal(FacetedProject.java:363)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.mergeChangesInternal(FacetedProject.java:1181)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.access$2(FacetedProject.java:1117)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject$1.run(FacetedProject.java:324)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modify(FacetedProject.java:339)
+	at org.eclipse.m2e.wtp.WebProjectConfiguratorDelegate.configure(WebProjectConfiguratorDelegate.java:136)
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:94)
+	... 18 more
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-webmvc-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-aop-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-expression-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-core-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-jcl-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-context-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-tx-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-orm-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-beans-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-jdbc-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/ojdbc14-14.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/commons-dbcp-1.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/commons-pool-1.5.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jstl-1.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/standard-1.1.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/hibernate-core-5.4.8.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jboss-logging-3.3.2.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/javax.persistence-api-2.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/javassist-3.24.0-GA.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/byte-buddy-1.10.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/antlr-2.7.7.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jandex-2.0.5.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/classmate-1.3.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/javax.activation-api-1.2.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/dom4j-2.1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jaxb-api-2.3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jaxb-runtime-2.3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/txw2-2.3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/istack-commons-runtime-3.0.7.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/stax-ex-1.8.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/FastInfoset-1.2.15.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:32.536
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib. May be locked by another process.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-webmvc-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-aop-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-expression-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-core-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-jcl-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-context-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-tx-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-orm-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-beans-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/spring-jdbc-5.1.2.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/ojdbc14-14.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/commons-dbcp-1.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/commons-pool-1.5.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jstl-1.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/standard-1.1.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/hibernate-core-5.4.8.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jboss-logging-3.3.2.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/javax.persistence-api-2.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/javassist-3.24.0-GA.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/byte-buddy-1.10.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/antlr-2.7.7.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jandex-2.0.5.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/classmate-1.3.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/javax.activation-api-1.2.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/dom4j-2.1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jaxb-api-2.3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/jaxb-runtime-2.3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/txw2-2.3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/istack-commons-runtime-3.0.7.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/stax-ex-1.8.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib/FastInfoset-1.2.15.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2019-11-22 14:48:33.958
+!MESSAGE Could not delete D:/OnlineShopping/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/onlineshopping/WEB-INF/lib. May be locked by another process.

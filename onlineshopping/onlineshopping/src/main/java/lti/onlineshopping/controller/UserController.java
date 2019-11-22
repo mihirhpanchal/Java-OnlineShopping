@@ -51,7 +51,7 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value = "/loginProcess", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,   @ModelAttribute User iuser) {
 	    ModelAndView mav = null;
 	    User user = userService.validateUser(iuser);

@@ -66,8 +66,7 @@ body {
 					</div>
 					<div class="form-bottom contact-form">
 						<c:url value="/contactus" var="url"></c:url>
-						<form:form role="form" method="post" action="${url}"
-							commandName="contact">
+						<form role="form" method="post">
 							<div class="form-group">
 								<label class="sr-only" for="contact-email">Email</label>
 								<form:input path="email" type="text" class="contact-email form-control" placeholder="Email..." required="required"></form:input>
@@ -84,7 +83,7 @@ body {
 							<button style="float: right;" type="button" class="btn"
 								onclick="window.location.href='<c:url value="/index1" />'">Back
 								to Home</button>
-						</form:form>
+
 					</div>
 				</div>
 			</div>

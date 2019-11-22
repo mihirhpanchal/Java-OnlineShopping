@@ -38,10 +38,10 @@
 				<li><a href=" <c:url value="/" />">Home</a></li>
 				<li><a href=" <c:url value="viewallprod.do" />">Product
 						List</a></li>
-				<li><a href=" <c:url value="/aboutus" />">About Us</a></li>
+				<li><a href=" <c:url value="/aboutUs.jsp" />">About Us</a></li>
 				
 <!-- 				<security:authorize access="hasRole('ROLE_USER')"> -->
-				<li><a href=" <c:url value="/contactus" />">Contact Us</a></li>
+				<li><a href=" <c:url value="/contactUs.jsp" />">Contact Us</a></li>
 <!-- 				</security:authorize> -->
 				
 				<!-- 			Only admin can view this link -->
