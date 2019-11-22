@@ -1,6 +1,0 @@
-package lti.onlineshopping.service;
-
-public class ServiceImpl implements ServiceIntf {
-
-	
-}
