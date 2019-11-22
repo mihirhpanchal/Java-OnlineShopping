@@ -63,6 +63,14 @@ input:hover,
 .btn:hover {
   opacity: 1;
 }
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, .container, .product, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
 </style>
 </head>
 <body>
