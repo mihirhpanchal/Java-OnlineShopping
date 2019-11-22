@@ -46,7 +46,7 @@
 				
 				<!-- 			Only admin can view this link -->
 <!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
-					<li><a href=" <c:url value="/regproduct.do" />">Add
+					<li><a href=" <c:url value="../regproduct.jsp" />">Add
 							Product</a></li>
 <!-- 				</security:authorize> -->
 			</ul>

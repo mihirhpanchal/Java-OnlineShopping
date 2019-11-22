@@ -20,21 +20,21 @@
 <body>
 	<footer class="footer-distributed">
 	<div class="footer-right">
-		<a href="<c:url value="/index1"/>"><span
+		<a href="<c:url value="/"/>"><span
 			class="glyphicon glyphicon-home"></span></a>
 <%-- 			<a href="<spring:url value="/cart/getCartById" />"> --%>
 			<span class="glyphicon glyphicon-shopping-cart"></a>
-		<a href="<c:url value="/login"/>"><span
+		<a href="<c:url value="../login.do"/>"><span
 			class="glyphicon glyphicon-user"></a> <a href="#"><span
 			class="glyphicon glyphicon-envelope"></a>
 	</div>
 	<div class="footer-left">
 
 		<p class="footer-links">
-			<a href="<c:url value="/home.jsp"/>">Home</a>
-			 <a href="<c:url value="/aboutus.jsp"/>">About Us</a>
+			<a href="<c:url value="/"/>">Home</a>
+			 <a href="<c:url value="/aboutUs.jsp"/>">About Us</a>
 			 <a href="<c:url value="/ViewProducts.do" />">Product List</a> 
-			 <a href="<c:url value="/contact.jsp"/>">Contact Us</a>
+			 <a href="<c:url value="/contactUs.jsp"/>">Contact Us</a>
 		</p>
 
 		<p>Created by MLVP &copy; 2019</p>
