@@ -11,7 +11,7 @@ position:absolute;
 top:20%;
 left:18%;
 width:55%;
-height:165%;
+height:149%;
 
 font-family:arial;
 z-index:100;
@@ -114,7 +114,7 @@ input[type=number], select, textarea{
 </style>
 </head>
 <body>
- <div><%@ include file="shared/navbar.jsp"%></div> 
+ <header><%@ include file="shared/navbar.jsp"%></header> 
 
 
 <div class="container">
@@ -212,12 +212,14 @@ input[type=number], select, textarea{
     <input type="submit" value="Submit">
 	</div>
 
-
+ 
   </form>
 
 </div>
-  	 
+
 </div>
-<div><%@ include file="shared/footer.jsp"%></div> 
+ <div><%@ include file="shared/footer.jsp"%></div>
+
+
 </body>
 </html>
