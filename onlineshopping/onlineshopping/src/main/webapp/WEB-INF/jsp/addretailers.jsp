@@ -10,7 +10,7 @@
 .container{
 position:absolute;
 top:2%;
-left:18%;
+left:23%;
 width:55%;
 height:85%;
 
