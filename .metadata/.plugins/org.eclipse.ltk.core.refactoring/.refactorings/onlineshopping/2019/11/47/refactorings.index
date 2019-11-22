@@ -1,28 +1,8 @@
-1574259988074	Rename type 'DaoIntf'
-1574259998660	Rename type 'DaoImpl'
-1574260021341	Rename type 'ServiceIntf'
-1574260031316	Rename type 'ServiceImpl'
-1574260053033	Rename type 'MyController'
-1574305674559	Delete element
-1574307616786	Copy files
-1574311920007	Delete element
-1574311961865	Delete elements
-1574312566583	Rename type 'RetailerDao'
-1574312573130	Rename type 'ReatilerDaoInt'
-1574312590051	Rename type 'UserDao'
-1574312716969	Rename type 'RetailerService'
-1574312723203	Rename type 'UserService'
-1574317734320	Delete elements
-1574317749601	Delete elements
-1574320271303	Move 'home.jsp' to 'webapp'
-1574331817977	Move 'shared' to 'webapp'
-1574333419212	Move 'style.css' to 'css'
-1574333711492	Rename resource 'css'
-1574333720572	Rename resource 'resouces'
-1574333738609	Move 'style.css' to 'css'
-1574333909560	Rename resource 'resources'
-1574334105546	Rename resource 'static'
-1574336678109	Move 'shared' to 'jsp'
-1574336717036	Move 'shared' to 'webapp'
-1574391116889	Move 'style.css' to 'WEB-INF'
-1574391129231	Move 'style.css' to 'webapp'
+1574409089718	Rename resource 'index.jsp'
+1574409097508	Rename resource 'home.jsp'
+1574409396688	Rename resource 'regproduct.html'
+1574409419110	Rename resource 'regproduct.js'
+1574409594174	Move 'regproduct.jsp' to 'jsp'
+1574410198658	Copy file
+1574411773973	Copy file
+1574412500959	Move 'regproduct.jsp' to 'webapp'

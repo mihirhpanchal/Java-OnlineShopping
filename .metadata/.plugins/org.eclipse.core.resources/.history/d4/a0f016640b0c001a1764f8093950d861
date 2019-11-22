@@ -1,5 +1,0 @@
-package lti.onlineshopping.dao;
-
-public interface UserDaoIntf {
-
-}

@@ -1,7 +1,0 @@
-127.0.0.1 - - [21/Nov/2019:17:26:37 +0530] "GET / HTTP/1.1" 404 1074
-0:0:0:0:0:0:0:1 - - [21/Nov/2019:17:26:38 +0530] "GET /onlineshopping/home.jsp HTTP/1.1" 500 3673
-127.0.0.1 - - [21/Nov/2019:17:29:01 +0530] "GET / HTTP/1.1" 404 1074
-0:0:0:0:0:0:0:1 - - [21/Nov/2019:17:29:04 +0530] "GET /onlineshopping/home.jsp HTTP/1.1" 200 1685
-0:0:0:0:0:0:0:1 - - [21/Nov/2019:17:29:04 +0530] "GET /onlineshopping/assets/css/styles.css HTTP/1.1" 404 1122
-0:0:0:0:0:0:0:1 - - [21/Nov/2019:17:29:49 +0530] "GET /onlineshopping/assets/css/styles.css HTTP/1.1" 404 1122
-0:0:0:0:0:0:0:1 - - [21/Nov/2019:17:30:57 +0530] "GET /onlineshopping/assets/css/styles.css HTTP/1.1" 404 1122

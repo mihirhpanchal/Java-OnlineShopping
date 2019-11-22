@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import lti.onlineshopping.dao.ReatilerDaoIntf;
+import lti.onlineshopping.model.AdminRetailers;
+
+import lti.onlineshopping.dao.RetailerDaoIntf;
 import lti.onlineshopping.model.Retailer;
 
 
@@ -14,7 +16,7 @@ import lti.onlineshopping.model.Retailer;
 public class RetailerServiceImpl  implements RetailerServiceInt{
 	
 	@Autowired
-	public ReatilerDaoIntf retailerDao;
+	public RetailerDaoIntf retailerDao;
 	
 	@Transactional
 	public List<Retailer> getRetailers() {
@@ -26,6 +28,13 @@ public class RetailerServiceImpl  implements RetailerServiceInt{
 	@Transactional
 	public boolean removeRetailer(String id){
 		return retailerDao.removeRetailer(id);
+	}
+	
+	@Transactional
+	public boolean insertRetailer(AdminRetailers adminretailers) {
+		
+		boolean flag = retailerDao.insertRetailer(adminretailers);
+		return flag;
 	}
 
 }
