@@ -8,7 +8,7 @@
 <style>
 .container{
 position:absolute;
-top:2%;
+top:20%;
 left:18%;
 width:55%;
 height:165%;
@@ -212,9 +212,12 @@ input[type=number], select, textarea{
     <input type="submit" value="Submit">
 	</div>
 
-	
+
   </form>
+
 </div>
- <div><%@ include file="shared/footer.jsp"%></div> 
+  	 
+</div>
+<div><%@ include file="shared/footer.jsp"%></div> 
 </body>
 </html>

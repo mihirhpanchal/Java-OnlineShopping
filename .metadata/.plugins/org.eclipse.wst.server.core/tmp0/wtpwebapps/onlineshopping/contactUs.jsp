@@ -66,24 +66,24 @@ body {
 					</div>
 					<div class="form-bottom contact-form">
 						<c:url value="/contactus" var="url"></c:url>
-						<form role="form" method="post">
+						<form method="post">
 							<div class="form-group">
 								<label class="sr-only" for="contact-email">Email</label>
-								<form:input path="email" type="text" class="contact-email form-control" placeholder="Email..." required="required"></form:input>
+								<input type="text" class="contact-email form-control" placeholder="Email..." required="required"><input>
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="contact-subject">Subject</label>
-								<form:input type="text" path="subject" class="contact-subject form-control" placeholder="Subject..." required="required"></form:input>
+								<input type="text" path="subject" class="contact-subject form-control" placeholder="Subject..." required="required"><input>
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="contact-message">Message</label>
-								<form:textarea path="message" class="contact-message form-control" placeholder="Message..." required="required"></form:textarea>
+								<textarea path="message" class="contact-message form-control" placeholder="Message..." required="required"><textarea>
 							</div>
 							<button type="submit" class="btn">Send message</button>
 							<button style="float: right;" type="button" class="btn"
 								onclick="window.location.href='<c:url value="/index1" />'">Back
 								to Home</button>
-
+						</form>
 					</div>
 				</div>
 			</div>
