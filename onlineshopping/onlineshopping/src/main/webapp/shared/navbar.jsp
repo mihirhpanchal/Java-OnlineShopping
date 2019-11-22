@@ -1,75 +1,88 @@
-<%-- <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%> --%>
-	<script>
-		window.userRole = '${userModel.role}';
-	</script>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="${contextRoot}/home">Online Shopping</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li id="about">
-                        <a href="${contextRoot}/about">About</a>
-                    </li>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- <%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ page isELIgnored="false"%> --%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="icon" type="image/x-icon" href="<c:url value="/assets/images/favicon1.png"/>" />
+<link rel="stylesheet"
+	href="<c:url value="/assets/bootstrap/css/bootstrap.min.css"/>">
+<script src="<c:url value="/assets/js/jquery.js"/>"></script>
+<script src="<c:url value="/assets/bootstrap/js/bootstrap.min.js"/>"></script>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/css/overall.css"/>">
 
-                    <li id="contact">
-                        <a href="${contextRoot}/contact">Contact</a>
-                    </li>
-                    
-                    <li id="listProducts">
-                        <a href="${contextRoot}/show/all/products">View Products</a>
-                    </li>
-					<security:authorize access="hasAuthority('ADMIN')">
-	                    <li id="manageProduct">
-	                        <a href="${contextRoot}/manage/product">Manage Product</a>
-	                    </li>					
-					</security:authorize>
-                </ul>
-			    
-			    <ul class="nav navbar-nav navbar-right">
-			    	<security:authorize access="isAnonymous()">
-	                    <li id="signup">
-	                        <a href="${contextRoot}/membership">Sign Up</a>
-	                    </li>
-						<li id="login">
-	                        <a href="${contextRoot}/login">Login</a>
-	                    </li> 			    	
-			    	</security:authorize>
-			    	<security:authorize access="isAuthenticated()">
-						<li class="dropdown" id="userModel">
-						  <a class="btn btn-default dropdown-toggle" href="javascript:void(0)" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						    ${userModel.fullName}
-						    <span class="caret"></span>
-						  </a>
-						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		                    <security:authorize access="hasAuthority('USER')">
-			                    <li id="cart">
-			                        <a href="${contextRoot}/cart/show">
-			                        	<span class="glyphicon glyphicon-shopping-cart"></span>&#160;<span class="badge">${userModel.cart.cartLines}</span> - &#8377; ${userModel.cart.grandTotal} 
-			                        </a>
-			                    </li>		     
-			                	<li role="separator" class="divider"></li>	                                   
-		                    </security:authorize>
-							<li id="logout">
-		                        <a href="${contextRoot}/logout">Logout</a>
-		                    </li>                    			    	
-						  </ul>		
-						</li>    			    
-			    	</security:authorize>                    
-			    </ul>                
-                
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+</head>
+<body>
 
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+
+		<div class="nav navbar">
+		</div>
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="<c:url value="/" />">VPshop.ML</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href=" <c:url value="/" />">Home</a></li>
+				<li><a href=" <c:url value="viewallprod.do" />">Product
+						List</a></li>
+				<li><a href=" <c:url value="/aboutus" />">About Us</a></li>
+				
+<!-- 				<security:authorize access="hasRole('ROLE_USER')"> -->
+				<li><a href=" <c:url value="/contactus" />">Contact Us</a></li>
+<!-- 				</security:authorize> -->
+				
+				<!-- 			Only admin can view this link -->
+<!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
+					<li><a href=" <c:url value="/regproduct.do" />">Add
+							Product</a></li>
+<!-- 				</security:authorize> -->
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<c:if test="${!empty pageContext.request.userPrincipal.name}">
+					<li><a href="<c:url value="/index" />"><span
+							class="glyphicon glyphicon-shopping-user"></span>Welcome..${pageContext.request.userPrincipal.name}</a></li>
+
+<!-- 					<security:authorize access="hasRole('ROLE_USER')"> -->
+						<li><a href="<c:url value="/cart/getCartById" />"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+<!-- 					</security:authorize> -->
+					<li><a href="<c:url value="/logout" />"><span
+							class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</c:if>
+			</ul>
+
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<c:if test="${pageContext.request.userPrincipal.name==null}">
+					<li><a href="<c:url value="/login.do" />"><span
+							class="glyphicon glyphicon-shopping-cart"></span>My Cart</a></li>
+					<li><a href="<c:url value="/signup.do" />"><span
+							class="glyphicon glyphicon-log-user"></span> SignUp</a></li>
+					<li><a href="<c:url value="/login.do" />"><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</c:if>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+
+
+</body>
+</html>

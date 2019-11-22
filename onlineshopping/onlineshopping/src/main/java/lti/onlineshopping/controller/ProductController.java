@@ -79,7 +79,7 @@ public class ProductController {
 		
 		List<Object[]> products = productService.getUsers();
 		System.out.println(products.size());
-		ModelAndView mav = new ModelAndView("viewallprod");
+		ModelAndView mav = new ModelAndView("productGrid");
 		mav.addObject("products", products);
 		return mav;
 	}

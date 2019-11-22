@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<!DOCTYPE tml PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Product Registration</title>
 <style>
-
 .container{
 position:absolute;
 top:2%;
@@ -113,7 +114,7 @@ input[type=number], select, textarea{
 </style>
 </head>
 <body>
-
+ <div><%@ include file="shared/navbar.jsp"%></div> 
 
 
 <div class="container">
@@ -214,6 +215,6 @@ input[type=number], select, textarea{
 	
   </form>
 </div>
-
+ <div><%@ include file="shared/footer.jsp"%></div> 
 </body>
 </html>

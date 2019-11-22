@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lti.onlineshopping.dao.ProductDaoImpl;
 import lti.onlineshopping.dao.ProductDaoIntf;
 import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.Product;
@@ -39,4 +40,8 @@ public class ProductServiceImpl implements ProductServiceIntf {
 		return list;
 	}
 	
+	public List<Object[]> getmyUsers() {
+		List<Object[]> list = new ProductDaoImpl().getProducts();
+		return list;
+	}
 }
