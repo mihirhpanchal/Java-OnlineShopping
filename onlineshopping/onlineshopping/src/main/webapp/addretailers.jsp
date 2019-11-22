@@ -9,8 +9,8 @@
 
 .container{
 position:absolute;
-top:2%;
-left:23%;
+top:25%;
+left:17%;
 width:55%;
 height:85%;
 
@@ -75,6 +75,8 @@ input:hover,
 </head>
 <body>
 
+ <header><%@ include file="shared/navbar.jsp"%></header> 
+
 <div class="container">
 
 <div class="addretailer">Add Retailer<br> </div>
@@ -82,33 +84,34 @@ input:hover,
 <div class="col" style="position:absolute;top:65px;left:175px;width:50%;z-index:105">
 
 	<form action="addretailers.do" method="post">
-	<table>
-		<tr>
-			<td> Enter Retailer's Id :<input type="text"  name="t1" pattern= "[0-9]+" placeholder="Retailer id" autofocus required  
-			title="Please enter the Numeric Values.."/></td>
-			</tr>
-			<tr></tr>
-		<tr>
-			<td> Enter Retailer's Name :<input type="text"  name="t2" pattern="[A-Za-z]+" placeholder="Retailer Name" autofocus required 
-				title="Name should not contain Numeric Values.."/></td>
-			</tr>
-			<tr></tr>
-		<tr>
-			<td> Enter Retailer's Email :<input type="email" name="t3" placeholder="aaa@xyz.com" autofocus required /></td>
-			</tr>
-		<tr>      </tr>
+
+			<label> Enter Retailer's Id :</label>
+			<input type="text"  name="t1" pattern= "[0-9]+" placeholder="Retailer id" autofocus required  
+			title="Please enter the Numeric Values.."/>
+			<br><br>
+			
+			<label> Enter Retailer's Name :</label>
+			<input type="text"  name="t2" pattern="[A-Za-z]+" placeholder="Retailer Name" autofocus required 
+				title="Name should not contain Numeric Values.."/>
+				<br><br>
 		
-		<tr>
-			<td> Enter Mobile No :<input type="text" name="t4" pattern="[789][0-9]{9}" placeholder="Mobile no" autofocus required
-				title="Values should be Numeric and It should be of 10 digits only"/></td>
-			</tr>
-		<tr></tr>
-			<tr><td><input type ="submit" value="Add Retailer" /><td></tr>
+		<label>Enter Retailer's Email :</label>
+		<input type="email" name="t3" placeholder="aaa@xyz.com" autofocus required />
+		<br><br>
+		
+		<label> Enter Mobile No :</label>
+		<input type="text" name="t4" pattern="[789][0-9]{9}" placeholder="Mobile no" autofocus required
+				title="Values should be Numeric and It should be of 10 digits only"/>
+				<br><br>
+			<input type ="submit" value="Add Retailer" />
 	
-	</table>
+
 	
 </div>
 </form>
 </div>
+<div class="footer" style="position:absolute;top:-235px;left:0px;width:100%;z-index:105">
+ <div><%@ include file="shared/footer.jsp"%></div>
+ </div>
 </body>
 </html>
