@@ -8,9 +8,9 @@
 .container{
 position:absolute;
 top:2%;
-left:18%;
+left:23%;
 width:55%;
-height:165%;
+height:138%;
 
 font-family:arial;
 z-index:100;
@@ -35,13 +35,7 @@ background-color:#F1F1F1;
   clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
+
 }
 
 .product{
@@ -109,6 +103,13 @@ input[type=number], select, textarea{
 }
 
 
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, .container, .product, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 
 </style>
 </head>
