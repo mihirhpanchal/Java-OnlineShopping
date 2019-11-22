@@ -6,7 +6,7 @@
 
 <title>Books Shop Online</title>
 
-<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>
 <body>

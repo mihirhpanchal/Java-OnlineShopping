@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Wed Nov 20 17:28:15 IST 2019
-org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\lntinfotech\\.m2\\repository\\org\\springframework\\spring-web\\5.1.2.RELEASE\\spring-web-5.1.2.RELEASE.jar=WEB-INF/lib/spring-web-5.1.2.RELEASE.jar
-org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\lntinfotech\\.m2\\repository\\org\\springframework\\spring-web\\5.2.1.RELEASE\\spring-web-5.2.1.RELEASE.jar=WEB-INF/lib/spring-web-5.2.1.RELEASE.jar

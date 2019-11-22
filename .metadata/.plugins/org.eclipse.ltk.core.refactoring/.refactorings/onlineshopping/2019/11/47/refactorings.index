@@ -24,3 +24,5 @@
 1574334105546	Rename resource 'static'
 1574336678109	Move 'shared' to 'jsp'
 1574336717036	Move 'shared' to 'webapp'
+1574391116889	Move 'style.css' to 'WEB-INF'
+1574391129231	Move 'style.css' to 'webapp'
