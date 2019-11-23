@@ -16,7 +16,7 @@ import lti.onlineshopping.service.RetailerServiceInt;
 
 
 
-@Controller("mycontroller")
+@Controller("admincontroller")
 public class AdminController {
 	
 	@Autowired

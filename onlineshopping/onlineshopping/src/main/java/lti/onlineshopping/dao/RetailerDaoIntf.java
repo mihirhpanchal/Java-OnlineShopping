@@ -7,7 +7,7 @@ import lti.onlineshopping.model.Retailer;
 
 
 
-public interface ReatilerDaoIntf {
+public interface RetailerDaoIntf {
 	
 	public List<Retailer> getRetailers();
 	public boolean removeRetailer(String id);

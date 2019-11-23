@@ -15,4 +15,6 @@ public interface ProductServiceIntf {
 	public SubCategory getSubCategory(String scategoryname);
 	
 	public List<Object[]> getUsers();
+
+	public Product getProductById(String productId);
 }

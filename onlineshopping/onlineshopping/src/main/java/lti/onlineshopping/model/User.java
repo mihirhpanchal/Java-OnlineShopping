@@ -3,7 +3,9 @@ package lti.onlineshopping.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="users")
@@ -15,7 +17,17 @@ public class User {
 	@Column(unique=true)
 	private String email;
 	private String cno;
+	private boolean enabled;
 	
+	@OneToOne(mappedBy = "users")
+	private Customer customer;
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -50,6 +62,11 @@ public class User {
 	public User() {
 		super();
 	}
-	
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 	
 }

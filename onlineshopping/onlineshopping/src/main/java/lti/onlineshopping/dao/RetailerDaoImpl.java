@@ -16,7 +16,7 @@ import lti.onlineshopping.model.Retailer;
 
 
 @Repository("retailerDao")
-public class RetailerDaoImpl implements ReatilerDaoIntf{
+public class RetailerDaoImpl implements RetailerDaoIntf{
 	
 	public List<Retailer> getRetailers(){
 		

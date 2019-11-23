@@ -15,4 +15,7 @@ public interface ProductDaoIntf {
 	public SubCategory getSubCategory(String scategoryname);
 	
 	public List<Object[]> getProducts();
+
+	Product getProductById(String productId);
+
 }

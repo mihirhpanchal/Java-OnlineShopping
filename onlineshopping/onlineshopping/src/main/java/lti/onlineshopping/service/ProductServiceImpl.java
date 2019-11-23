@@ -44,4 +44,8 @@ public class ProductServiceImpl implements ProductServiceIntf {
 		List<Object[]> list = new ProductDaoImpl().getProducts();
 		return list;
 	}
+	
+	public Product getProductById(String productId) {
+		return productDao.getProductById(productId);
+	}
 }

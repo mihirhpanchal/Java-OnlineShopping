@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lti.onlineshopping.dao.ReatilerDaoIntf;
+import lti.onlineshopping.dao.RetailerDaoIntf;
 import lti.onlineshopping.model.Retailer;
 
 
@@ -13,7 +13,7 @@ import lti.onlineshopping.model.Retailer;
 public class RetailerServiceImpl  implements RetailerServiceInt{
 	
 	@Autowired
-	public ReatilerDaoIntf retailerDao;
+	public RetailerDaoIntf retailerDao;
 	
 	public List<Retailer> getRetailers() {
 		 List<Retailer>  retailer = retailerDao. getRetailers();
