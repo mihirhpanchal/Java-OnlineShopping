@@ -28,7 +28,7 @@ body, h1, h2, h3, h4, h5 {
 </style>
 </head>
 <body>
-<div><%@ include file="../../shared/navbar.jsp"%></div>
+<div><%@ include file="/shared/navbar.jsp"%></div>
 <%
 List<Object[]> products = new ProductServiceImpl().getmyUsers();
 System.out.println(products.size());
