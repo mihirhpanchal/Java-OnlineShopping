@@ -8,9 +8,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import lti.onlineshopping.model.Category;
@@ -19,9 +16,7 @@ import lti.onlineshopping.model.SubCategory;
 
 @Repository("productDao")
 public class ProductDaoImpl implements ProductDaoIntf{
-	
-	@Autowired
-	private SessionFactory sessionFactory;
+
 
 	public List<Object[]> getProducts(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
@@ -97,14 +92,5 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		return subcategory;
 	}
 	
-	public Product getProductById(String productId) {
-
-		// Reading the records from the table
-		Session session = sessionFactory.openSession();
-		// select * from Product where isbn=i
-		Product product = (Product) session.get(Product.class, productId);
-		session.close();
-		return product;
-	}
 
 }

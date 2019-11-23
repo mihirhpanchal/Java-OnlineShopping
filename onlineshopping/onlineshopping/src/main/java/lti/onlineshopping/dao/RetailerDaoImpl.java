@@ -11,10 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import lti.onlineshopping.model.Retailer;
 
-
-
-
-
 @Repository("retailerDao")
 public class RetailerDaoImpl implements RetailerDaoIntf{
 	

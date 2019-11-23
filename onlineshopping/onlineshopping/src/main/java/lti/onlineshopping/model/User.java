@@ -3,7 +3,6 @@ package lti.onlineshopping.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -19,15 +18,6 @@ public class User {
 	private String cno;
 	private boolean enabled;
 	
-	@OneToOne(mappedBy = "users")
-	private Customer customer;
-	
-	public Customer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
 	public String getUsername() {
 		return username;
 	}

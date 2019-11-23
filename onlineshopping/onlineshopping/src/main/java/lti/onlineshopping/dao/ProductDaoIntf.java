@@ -16,6 +16,4 @@ public interface ProductDaoIntf {
 	
 	public List<Object[]> getProducts();
 
-	Product getProductById(String productId);
-
 }
