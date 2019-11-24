@@ -1,0 +1,38 @@
+select * from category
+
+select * from subcategory
+
+desc category
+
+Insert into category (category_description,category_name) values ("Electronic Products","Electronics")
+
+desc subcategory
+
+create table SubCategory (sub_id varchar2(255 char) not null, sub_name varchar2(255 char), sub_desc varchar2(255 char),  category_id number(10,0), primary key (sub_id))
+
+alter table SubCategory add constraint FK806xr1d6ncs4kj5poyk81o90m foreign key (category_id) references Category
+		
+		Insert into Subcategory values ('S1','Mobile','Mobile Products',100)
+		Insert into Subcategory values ('S2','Shoes','Shoe Products',200)
+		Insert into Subcategory values ('S3','Medicine','Medicine Products',300)
+
+		
+create table Category (category_id number(10,0) not null, category_description varchar2(255 char), category_name varchar2(255 char), primary key (category_id))
+
+Insert into Category values (300,'Electronic Products','Electronics');
+Insert into Category values (200,'Fashion Products','Fashion')
+Insert into Category values (100,'Health Products','Health')
+
+
+drop table category
+
+drop table subcategory
+
+drop table product
+
+select category_id from category where category_name='Electronics'
+
+select sub_id from subcategory where sub_name='Mobile'
+
+select * from product
+desc product

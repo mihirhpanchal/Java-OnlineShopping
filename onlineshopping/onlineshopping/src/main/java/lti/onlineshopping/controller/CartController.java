@@ -1,5 +1,6 @@
 package lti.onlineshopping.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -24,11 +25,11 @@ public class CartController {
 	public String buy(@PathVariable("id") String id, HttpSession session) {
 		Product productModel = new Product();
 		if (session.getAttribute("cart") == null) {
-			List<Product> cart = new ArrayList<Item>();
-			cart.add(new Item(productModel.find(id), 1));
+			List<Product> cart = new ArrayList<Product>();
+			cart.add(new Product(productModel.find(id), 1));
 			session.setAttribute("cart", cart);
 		} else {
-			List<Item> cart = (List<Item>) session.getAttribute("cart");
+			List<Product> cart = (List<Product>) session.getAttribute("cart");
 			int index = this.exists(id, cart);
 			if (index == -1) {
 				cart.add(new Item(productModel.find(id), 1));
