@@ -7,7 +7,6 @@ import javax.persistence.Persistence;
 import org.springframework.stereotype.Repository;
 
 import lti.onlineshopping.model.Order;
-import lti.onlineshopping.model.OrderBack;
 @Repository("orderDao")
 public class OrderDaoImpl implements OrderDaoIntf {
 
@@ -30,7 +29,7 @@ public class OrderDaoImpl implements OrderDaoIntf {
 			System.out.println("Error:"+e);
 		}
 		em.close();
-		
+		emf.close();
 		return result;
 	}
 }
