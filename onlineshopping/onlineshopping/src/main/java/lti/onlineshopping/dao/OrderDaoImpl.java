@@ -7,18 +7,18 @@ import javax.persistence.Persistence;
 import org.springframework.stereotype.Repository;
 
 import lti.onlineshopping.model.Order;
-import lti.onlineshopping.model.OrderBack;
 @Repository("orderDao")
 public class OrderDaoImpl implements OrderDaoIntf {
 
 	public boolean addOrder(Order order) {
 		System.out.println("Order Dao called");
 		boolean result = false;
-
+		EntityManagerFactory emf = null;
+		EntityManager em = null;
 		try
 		{
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-		EntityManager em = emf.createEntityManager();
+		emf = Persistence.createEntityManagerFactory("pu");
+		em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(order);
 		em.getTransaction().commit();	
@@ -28,6 +28,8 @@ public class OrderDaoImpl implements OrderDaoIntf {
 		{
 			System.out.println("Error:"+e);
 		}
+		em.close();
+		emf.close();
 		return result;
 	}
 }

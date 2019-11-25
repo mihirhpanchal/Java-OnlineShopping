@@ -19,50 +19,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
-
-* {
-  box-sizing: border-box;
+body, h1, h2, h3, h4, h5 {
+	font-family: "Raleway", sans-serif
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.w3-sidenav a, .w3-sidenav h4 {
+	font-weight: bold
 }
-
-
-/* Float four columns side by side */
-.card {
-  float: left;
-  width: 65%;
-  padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding in columns */
-.card1 {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the counter cards */
-.card2 {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .card {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-
-
 </style>
 </head>
 <body>
@@ -79,44 +42,23 @@ Product products = null;
 	         String url = "singleproduct.do?prodid="+product[0]; 		    
 	 %> --%>
 	 
-<<<<<<< HEAD
 	 
 	 <%
 	 String url = "addtocart.do";
 	 %>
-	 
-	 <div class="card">
-	  <div class="card1">
-=======
->>>>>>> 93c3311dc7e394cbbf11b41792ae026075c884ca
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity">
 			<div class="w3-container w3-white">
-			</div>
-			</div>
-			 <div class="card">
-			<div class="card1">
-				<h2>Product Name: <c:out value="${products.product_name }"/></h1><br>
+				<h1>Product Name: <c:out value="${products.product_name }"/></h1><br>
 	<h2>Price: <c:out value="${products.unit_price }"/></h2><br>
 	Product Description:<c:out value="${products.product_description }"></c:out><br>
 	Category<c:out value="${products.category.category_name}"/><br>
 	Sub Category<c:out value="${products.subcategory.sub_name}"/><br> 
 	Brand:<c:out value="${products.brand}"/><br>
-	<form action="addtocart.do" method="post">
-	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
-	Quatity:
-	<input type="text" name="qty" id="qty"><br>
-	<input type="submit" value="Add to cart">
-	</form>
-<<<<<<< HEAD
-		
-=======
->>>>>>> 93c3311dc7e394cbbf11b41792ae026075c884ca
+	<button><a href="<%=url%>">Add to Cart</a></button>
 			</div>
 		</div>
-		</div>
-		 </div>
 	<%-- <hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"

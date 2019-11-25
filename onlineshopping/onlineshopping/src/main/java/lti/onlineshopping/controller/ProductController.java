@@ -96,6 +96,7 @@ public class ProductController {
 	@RequestMapping(value = "/addtocart", method = RequestMethod.POST)
 	public ModelAndView addtocart(HttpServletRequest request) {
 		int prodid=Integer.parseInt(request.getParameter("prodid"));
+		System.out.println(prodid);
 		int quantity=Integer.parseInt(request.getParameter("qty"));
 		
 		HttpSession session = request.getSession();
@@ -182,12 +183,12 @@ public class ProductController {
 	@RequestMapping(value = "/singleproduct", method = RequestMethod.GET)
 	public ModelAndView fetchDetails(HttpServletRequest request) {
 		int prodid=Integer.parseInt(request.getParameter("prodid"));
-	
+		
 		Product products = productService.fetchDetails(prodid);
 	   
 		
 		ModelAndView mav = new ModelAndView("singleproduct");
-		mav.addObject("products", products);
+		mav.addObject("prodid", prodid);
 		return mav;
 	}
 }
