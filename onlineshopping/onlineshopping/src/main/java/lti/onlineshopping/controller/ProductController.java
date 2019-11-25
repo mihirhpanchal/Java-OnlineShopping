@@ -179,8 +179,21 @@ public class ProductController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/singleproduct", method = RequestMethod.GET)
+	public ModelAndView fetchDetails(HttpServletRequest request) {
+		int prodid=Integer.parseInt(request.getParameter("prodid"));
 	
-	
-	
-	
+		Product products = productService.fetchDetails(prodid);
+	   
+		
+		ModelAndView mav = new ModelAndView("singleproduct");
+		mav.addObject("products", products);
+		return mav;
+	}
 }
+	
+	
+	
+	
+	
+

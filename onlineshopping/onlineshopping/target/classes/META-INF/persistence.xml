@@ -8,12 +8,19 @@
 
         <properties>
            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
-           <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+           <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.101.31:1521:xe"/>
            <property name="javax.persistence.jdbc.user" value="hr"/>
            <property name="javax.persistence.jdbc.password" value="hr"/>
+<<<<<<< HEAD
+=======
            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+<<<<<<< HEAD
            <property name="hibernate.hbm2ddl.auto" value="update"/>
            <property name="connection.pool_size" value="1"/>
+=======
+>>>>>>> branch 'master' of https://github.com/mihirhpanchal/OnlineShopping.git
+           <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+>>>>>>> 08a1c04510521754b668d36386df9c655b589e86
            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
