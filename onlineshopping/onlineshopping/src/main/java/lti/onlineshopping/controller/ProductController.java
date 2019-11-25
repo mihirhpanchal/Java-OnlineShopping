@@ -176,7 +176,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/singleproduct", method = RequestMethod.GET)
-	public ModelAndView index(HttpServletRequest request) {
+	public ModelAndView fetchDetails(HttpServletRequest request) {
 		int prodid=Integer.parseInt(request.getParameter("prodid"));
 	
 		Product products = productService.fetchDetails(prodid);
