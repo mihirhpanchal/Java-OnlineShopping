@@ -36,22 +36,20 @@ System.out.println(products.size());
 	<%-- <c:forEach items="${products}" var="product"> --%>
 	 <%
 	    for( Object[] product :products){
-	          	
+	    	String url = "singleproduct.do?prodid="+product[0];
 	    
 	 %>
 		<div class="w3-third w3-container w3-margin-bottom">
-			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
-				class="w3-hover-opacity">
+			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%" class="w3-hover-opacity">
 			<div class="w3-container w3-white">
 				<p>
-					<b><%=product[0]%></b>
+					<b><h3><%=product[1]%></h3></b>
 				</p>
 				<p>
 					<ul>
-						<li><%=product[1]%></li>
-						<li><%=product[2]%></li>
-						<li><%=product[3]%></li>
-						<li>Price - <%=product[5]%></li>
+						<li><%=product[4]%></li>
+						<li><h5>Price - <%=product[2]%></h5></li>
+						<button><a href="<%=url%>">View Product</a></button>
 					</ul>
 				</p>
 			</div>

@@ -45,15 +45,13 @@ System.out.println(products.size());
 				class="w3-hover-opacity">
 			<div class="w3-container w3-white">
 				<p>
-					<b><%=product[0]%></b>
+					<b><h3><%=product[1]%></h3></b>
 				</p>
 				<p>
 					<ul>
-						<li><%=product[1]%></li>
-						<li><%=product[2]%></li>
-						<li><%=product[3]%></li>
-						<li>Price - <%=product[5]%></li>
-						<li><a href="<%=url%>">Add to Cart</a></li>
+						<li><%=product[4]%></li>
+						<li><h5>Price - <%=product[2]%></h5></li>
+						<button><a href="<%=url%>">View Product</a></button>
 					</ul>
 				</p>
 			</div>

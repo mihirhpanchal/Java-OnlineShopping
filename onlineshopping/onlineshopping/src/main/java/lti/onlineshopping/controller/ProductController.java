@@ -69,7 +69,7 @@ public class ProductController {
 	ModelAndView mav = new ModelAndView("viewallprod");
 	return mav;
 	}
-	
+/*	
 	@RequestMapping(value = "/singleproduct", method = RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request) {
 		int prodid=Integer.parseInt(request.getParameter("prodid"));
@@ -77,7 +77,7 @@ public class ProductController {
 		mav.addObject("prodid",prodid);
 		return mav;
 	}
-
+*/
 	
 	@RequestMapping(value = "/viewmycart", method = RequestMethod.GET)
 	public ModelAndView viewmycart(HttpServletRequest request) {
