@@ -39,9 +39,13 @@ Product products = null;
 	<%-- <c:forEach items="${products}" var="product"> --%>
 	 <%-- <%
 	    for( Object[] product :products){
-	         String url = "singleproduct.do?prodid="+product[0]; 	
-	    
+	         String url = "singleproduct.do?prodid="+product[0]; 		    
 	 %> --%>
+	 
+	 
+	 <%
+	 String url = "addtocart.do";
+	 %>
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity">
@@ -52,6 +56,7 @@ Product products = null;
 	Category<c:out value="${products.category.category_name}"/><br>
 	Sub Category<c:out value="${products.subcategory.sub_name}"/><br> 
 	Brand:<c:out value="${products.brand}"/><br>
+	<button><a href="<%=url%>">Add to Cart</a></button>
 			</div>
 		</div>
 	<%-- <hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
