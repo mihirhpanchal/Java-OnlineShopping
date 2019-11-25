@@ -1,64 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.topnav .search-container {
-  float: right;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-}
-
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-.topnav .search-container button:hover {
-  background: #ccc;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
-  </style>
+<link rel="icon" type="image/x-icon" href="<c:url value="/assets/images/favicon1.png"/>" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>VPshop.ML</title>
+<link rel="icon" type="image/x-icon" href="<c:url value="/resource/images/favicon1.png"/>" />
 </head>
 <body>
-<h2>Online Shopping</h2>
-<a href="viewretailers.do">Retailers Details</a><br>
-<a href ="addretailers.do">Add Retailers</a></br>
-<a href="regproduct.html">Register Product</a><br>
-<a href="viewallprod.do">View All Products</a><br>
-<a href="userdetails.do">User Details</a><br>
-<a href="signup.do">Register User</a><br>
-<a href="login.do">Login</a><br>
-<div class="search-container">
-    <form action="search.do">
-      <input type="text" name="search" placeholder="Search..">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
+ <%@ include file="shared/navbar.jsp"%> 
+ <%@ include file="shared/slider.jsp"%>
+ <%@ include file="WEB-INF/jsp/productGrid.jsp"%> 
+ <%@ include file="shared/footer.jsp"%> 
 </body>
 </html>
