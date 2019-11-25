@@ -11,7 +11,8 @@
            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
            <property name="javax.persistence.jdbc.user" value="hr"/>
            <property name="javax.persistence.jdbc.password" value="hr"/>
-           <property name="hibernate.hbm2ddl.auto" value="update"/>
+           <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+           <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
