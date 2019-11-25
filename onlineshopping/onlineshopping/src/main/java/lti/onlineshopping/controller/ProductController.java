@@ -189,6 +189,7 @@ public class ProductController {
 		
 		ModelAndView mav = new ModelAndView("singleproduct");
 		mav.addObject("prodid", prodid);
+		mav.addObject("products",products);
 		return mav;
 	}
 }
