@@ -58,7 +58,7 @@
 							class="glyphicon glyphicon-shopping-user"></span>Welcome..${pageContext.request.userPrincipal.name}</a></li>
 
 <!-- 					<security:authorize access="hasRole('ROLE_USER')"> -->
-						<li><a href="<c:url value="/cart/getCartById" />"><span
+						<li><a href="<c:url value="/viewmycart.do" />"><span
 								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 <!-- 					</security:authorize> -->
 					<li><a href="<c:url value="/logout" />"><span
@@ -70,7 +70,7 @@
 			<ul class="nav navbar-nav navbar-right">
 
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-					<li><a href="<c:url value="/login.do" />"><span
+					<li><a href="<c:url value="/viewmycart.do" />"><span
 							class="glyphicon glyphicon-shopping-cart"></span>My Cart</a></li>
 					<li><a href="<c:url value="/signup.do" />"><span
 							class="glyphicon glyphicon-log-user"></span> SignUp</a></li>

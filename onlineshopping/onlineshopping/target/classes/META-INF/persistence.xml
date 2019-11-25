@@ -11,6 +11,10 @@
            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.101.31:1521:xe"/>
            <property name="javax.persistence.jdbc.user" value="hr"/>
            <property name="javax.persistence.jdbc.password" value="hr"/>
+<<<<<<< HEAD
+=======
+           <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+>>>>>>> branch 'master' of https://github.com/mihirhpanchal/OnlineShopping.git
            <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
            <property name="hibernate.show_sql" value="true"/>
         </properties>

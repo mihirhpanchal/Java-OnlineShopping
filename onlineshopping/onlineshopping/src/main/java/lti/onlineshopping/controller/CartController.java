@@ -22,8 +22,6 @@ import lti.onlineshopping.model.Product;
 @RequestMapping(value = "cart")
 public class CartController {
 	
-	
-
 	@RequestMapping(value="/viewallprods",method=RequestMethod.GET)
 	public ModelAndView viewallprods(HttpServletRequest request,HttpServletResponse response)
 	{

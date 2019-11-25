@@ -8,12 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<c:forEach items="${mycart.cartItem}" var="cartItem">
-<c:out value="${cartItem.prodid}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br> 
+<c:forEach items="${myorder.orderItem}" var="orderItem">
+<c:out value="${orderItem.prodid}"/> &nbsp;<c:out value="${orderItem.quantity}"/>  &nbsp;<c:out value="${orderItem.price}"/><br> 
 <hr>
 </c:forEach>
-
-<a href="orderconfirm.do">Confirm Order</a>
+<a href="placeorder.do">Place Order</a>
 </body>
 </html>

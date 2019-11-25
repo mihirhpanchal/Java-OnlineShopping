@@ -20,6 +20,8 @@ import lti.onlineshopping.model.CartItem;
 import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.MyCart;
 import lti.onlineshopping.model.MyCartItem;
+import lti.onlineshopping.model.Order;
+import lti.onlineshopping.model.OrderItem;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 import lti.onlineshopping.service.ProductServiceIntf;
@@ -28,7 +30,88 @@ import lti.onlineshopping.service.ProductServiceIntf;
 public class ProductController {
 	@Autowired
 	ProductServiceIntf productService;
+		
+	@RequestMapping(value="/placeorder",method=RequestMethod.GET)
+	public ModelAndView palceorder(HttpServletRequest request,HttpServletResponse response)
+	{
+	ModelAndView mav = new ModelAndView("ordersucessful");
+	return mav;
+	}
 	
+	@RequestMapping(value = "/orderconfirm", method = RequestMethod.GET)
+	public ModelAndView orderconfirm(Cart cart, HttpServletRequest request) {
+			HttpSession session = request.getSession();
+			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
+			List<MyCartItem> clist = mycart.getCartItem();
+			Order myorder = new Order();
+			myorder.setOrderItem(new ArrayList<OrderItem>());
+			 for (MyCartItem item : clist) {
+				OrderItem orderItem = new OrderItem();
+				orderItem.setProdid(item.getProdid());
+				orderItem.setQuantity(item.getQuantity());
+				orderItem.setPrice(item.getPrice());
+				myorder.getOrderItem().add(orderItem);
+			 }
+			System.out.println(myorder);
+			ModelAndView mav = new ModelAndView("orderconfirm");
+			mav.addObject("myorder",myorder);
+			return mav;
+		}
+		
+
+	@RequestMapping(value="/viewallprods",method=RequestMethod.GET)
+	public ModelAndView viewallprods(HttpServletRequest request,HttpServletResponse response)
+	{
+	ModelAndView mav = new ModelAndView("viewallprod");
+	return mav;
+	}
+	
+	@RequestMapping(value = "/singleproduct", method = RequestMethod.GET)
+	public ModelAndView index(HttpServletRequest request) {
+		int prodid=Integer.parseInt(request.getParameter("prodid"));
+		ModelAndView mav = new ModelAndView("singleproduct");
+		mav.addObject("prodid",prodid);
+		return mav;
+	}
+
+	
+	@RequestMapping(value = "/viewmycart", method = RequestMethod.GET)
+	public ModelAndView viewmycart(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		MyCart mycart = (MyCart)session.getAttribute("mycart");
+		
+		ModelAndView mav = new ModelAndView("viewmycart");
+		mav.addObject("mycart",mycart);
+		return mav;
+	}
+	
+	
+	
+	//addtocart.do
+	
+	@RequestMapping(value = "/addtocart", method = RequestMethod.POST)
+	public ModelAndView addtocart(HttpServletRequest request) {
+		int prodid=Integer.parseInt(request.getParameter("prodid"));
+		int quantity=Integer.parseInt(request.getParameter("qty"));
+		
+		HttpSession session = request.getSession();
+		MyCart mycart = (MyCart)session.getAttribute("mycart");
+		if(mycart==null){
+			System.out.println("cart not created");
+			mycart = new MyCart();
+			mycart.setCartItem(new ArrayList<MyCartItem>());
+		}
+		System.out.println(mycart);
+		MyCartItem cartItem = new MyCartItem();
+		cartItem.setProdid(prodid);
+		cartItem.setQuantity(quantity);
+		mycart.getCartItem().add(cartItem);
+		session.setAttribute("mycart", mycart);
+		
+		System.out.println(mycart);
+		ModelAndView mav = new ModelAndView("viewallprod");
+		return mav;
+	}
 	
 	@RequestMapping(value="/insertproduct",method=RequestMethod.POST)
 	public ModelAndView insertContact(HttpServletRequest request,HttpServletResponse response)
