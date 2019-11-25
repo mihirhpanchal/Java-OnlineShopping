@@ -8,8 +8,8 @@
 <style>
 .container{
 position:absolute;
-top:12%;
-left:28%;
+top:22%;
+left:18%;
 width:45%;
 height:75%;
 font-family:arial;
@@ -18,22 +18,23 @@ background-color:#F1F1F1;
 }
 .signup{
 position:relative;
-width:40%;
+width:32%;
+right:2%;
 height:100%;
 color:white;
 font-size:30px;
 font-weight:bold;
 z-index:101;
-background-color:#2874F0;
+background-color:#211935;
 line-height:180px;
 }
 input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #263238 ;
   color: white;
   cursor: pointer;
 }
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #263238 ;
 }
 input,
 .btn {
@@ -55,12 +56,13 @@ input:hover,
 </style>
 </head>
 <body>
+ <header><%@ include file="../../shared/navbar.jsp"%></header> 
 <div class="container">
 
-<div class="col" style="position:absolute;top:150px;left:275px;width:50%;z-index:105">
+<div class="col" style="position:absolute;top:150px;left:315px;width:50%;z-index:105">
 <form action="loginProcess.do">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="username" placeholder="Username" required> <br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
         <input type="submit" value="Login">
 </form>
 	<p style="font-style: italic; color: red;">${message}</p>
@@ -70,5 +72,7 @@ input:hover,
 </span></div>
 
 </div>
+
+ <div><%@ include file="../../shared/footer.jsp"%></div>
 </body>
 </html>
