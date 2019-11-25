@@ -21,8 +21,8 @@ public class ProductDaoImpl implements ProductDaoIntf{
 	public List<Object[]> getProducts(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();
-		String sql="SELECT p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name FROM Product p join Category c join SubCategory s  on p.category_id=c.category_id and p.sub_id=s.sub_id";
-		sql="SELECT p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name FROM Product p , Category c , SubCategory s  where  p.category_id=c.category_id and p.sub_id=s.sub_id";
+		String sql=null;
+		sql="SELECT p.product_id,p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name FROM Product p , Category c , SubCategory s  where  p.category_id=c.category_id and p.sub_id=s.sub_id";
 		@SuppressWarnings("unchecked")
 		List<Object[]> products = em.createNativeQuery(sql).getResultList();
 		//.createQuery(sql).getResultList();

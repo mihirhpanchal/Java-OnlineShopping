@@ -37,7 +37,7 @@ System.out.println(products.size());
 	<%-- <c:forEach items="${products}" var="product"> --%>
 	 <%
 	    for( Object[] product :products){
-	          	
+	         String url = "singleproduct.do?prodid="+product[0]; 	
 	    
 	 %>
 		<div class="w3-third w3-container w3-margin-bottom">
@@ -53,6 +53,7 @@ System.out.println(products.size());
 						<li><%=product[2]%></li>
 						<li><%=product[3]%></li>
 						<li>Price - <%=product[5]%></li>
+						<li><a href="<%=url%>">Add to Cart</a></li>
 					</ul>
 				</p>
 			</div>

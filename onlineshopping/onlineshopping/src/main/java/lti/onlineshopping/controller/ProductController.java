@@ -1,11 +1,13 @@
 package lti.onlineshopping.controller;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import lti.onlineshopping.model.Cart;
+import lti.onlineshopping.model.CartItem;
 import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.MyCart;
+import lti.onlineshopping.model.MyCartItem;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 import lti.onlineshopping.service.ProductServiceIntf;
@@ -22,6 +28,8 @@ import lti.onlineshopping.service.ProductServiceIntf;
 public class ProductController {
 	@Autowired
 	ProductServiceIntf productService;
+	
+	
 	@RequestMapping(value="/insertproduct",method=RequestMethod.POST)
 	public ModelAndView insertContact(HttpServletRequest request,HttpServletResponse response)
 	{
