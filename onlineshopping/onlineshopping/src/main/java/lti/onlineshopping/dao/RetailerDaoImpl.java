@@ -20,6 +20,8 @@ public class RetailerDaoImpl implements RetailerDaoIntf{
 			  EntityManager em = emf.createEntityManager();	  
 			  @SuppressWarnings("unchecked")
 				List<Retailer> retailer = em.createQuery("SELECT u FROM  Retailer u").getResultList();
+			  emf.close();
+			  em.close();
 			  return  retailer;
 			  }
 	
@@ -37,6 +39,7 @@ public class RetailerDaoImpl implements RetailerDaoIntf{
 		  flag=true;
 		  }
 		 em.close();
+		 emf.close();
 		  return flag;
 	
 	}

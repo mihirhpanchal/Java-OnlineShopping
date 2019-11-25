@@ -15,8 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 import lti.onlineshopping.model.Cart;
 import lti.onlineshopping.model.MyCart;
 import lti.onlineshopping.model.MyCartItem;
-import lti.onlineshopping.model.Order;
-import lti.onlineshopping.model.OrderItem;
+import lti.onlineshopping.model.OrderBack;
+import lti.onlineshopping.model.OrderItemBack;
 
 	@Controller
 	@RequestMapping(value = "order")
@@ -34,10 +34,10 @@ import lti.onlineshopping.model.OrderItem;
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
 			List<MyCartItem> clist = mycart.getCartItem();
-			Order myorder = new Order();
-			myorder.setOrderItem(new ArrayList<OrderItem>());
+			OrderBack myorder = new OrderBack();
+			myorder.setOrderItem(new ArrayList<OrderItemBack>());
 			 for (MyCartItem item : clist) {
-				OrderItem orderItem = new OrderItem();
+				OrderItemBack orderItem = new OrderItemBack();
 				orderItem.setProdid(item.getProdid());
 				orderItem.setQuantity(item.getQuantity());
 				orderItem.setPrice(item.getPrice());

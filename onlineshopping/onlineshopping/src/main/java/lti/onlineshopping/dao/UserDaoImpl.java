@@ -26,6 +26,7 @@ public class UserDaoImpl implements UserDaoIntf{
 			em.getTransaction().commit();
 			res = true;
 			em.close();
+			emf.close();
 		}
 		catch (Exception e) {
 			System.out.println(e);
@@ -46,6 +47,7 @@ public class UserDaoImpl implements UserDaoIntf{
 		}
 		catch(Exception e) {System.out.println(e); }
 		em.close();
+		emf.close();
 		System.out.println(f);
 		return f;
 	  }

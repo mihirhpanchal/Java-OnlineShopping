@@ -26,17 +26,21 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		@SuppressWarnings("unchecked")
 		List<Object[]> products = em.createNativeQuery(sql).getResultList();
 		//.createQuery(sql).getResultList();
+		em.close();
+		emf.close();
 		return products;
 	}
 
 	public boolean insertProduct(Product product) {
 		System.out.println("Dao called");
 		boolean result = false;
-
+		
+		EntityManagerFactory emf = null;
+		EntityManager em = null;
 		try
 		{
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-		EntityManager em = emf.createEntityManager();
+		emf = Persistence.createEntityManagerFactory("pu");
+		em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(product);
 		em.getTransaction().commit();	
@@ -45,8 +49,10 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		catch(Exception e)
 		{
 			System.out.println("Error:"+e);
-		}
-		return result;
+		}finally{
+		em.close();
+		emf.close();
+		}return result;
 	}
 
 	public Category getCategory(String categoryname) {
@@ -67,7 +73,8 @@ public class ProductDaoImpl implements ProductDaoIntf{
 			if(category == null){
 			System.out.println("No category found");
 			}
-		
+		em.close();
+		emf.close();
 		return category;
 	}
 
@@ -88,7 +95,8 @@ public class ProductDaoImpl implements ProductDaoIntf{
 			if(subcategory == null){
 			System.out.println("No Sub category found");
 			}
-		
+		em.close();
+		emf.close();
 		return subcategory;
 	}
 	

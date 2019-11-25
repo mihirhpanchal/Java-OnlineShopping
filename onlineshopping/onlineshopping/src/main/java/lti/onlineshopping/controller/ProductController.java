@@ -21,7 +21,8 @@ import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.MyCart;
 import lti.onlineshopping.model.MyCartItem;
 import lti.onlineshopping.model.Order;
-import lti.onlineshopping.model.OrderItem;
+import lti.onlineshopping.model.OrderBack;
+import lti.onlineshopping.model.OrderItemBack;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 import lti.onlineshopping.service.ProductServiceIntf;
@@ -35,6 +36,9 @@ public class ProductController {
 	public ModelAndView palceorder(HttpServletRequest request,HttpServletResponse response)
 	{
 	ModelAndView mav = new ModelAndView("ordersucessful");
+	
+	String product_name=request.getParameter("product_name");
+	Order myorder = new Order();
 	return mav;
 	}
 	
@@ -43,10 +47,10 @@ public class ProductController {
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
 			List<MyCartItem> clist = mycart.getCartItem();
-			Order myorder = new Order();
-			myorder.setOrderItem(new ArrayList<OrderItem>());
+			OrderBack myorder = new OrderBack();
+			myorder.setOrderItem(new ArrayList<OrderItemBack>());
 			 for (MyCartItem item : clist) {
-				OrderItem orderItem = new OrderItem();
+				OrderItemBack orderItem = new OrderItemBack();
 				orderItem.setProdid(item.getProdid());
 				orderItem.setQuantity(item.getQuantity());
 				orderItem.setPrice(item.getPrice());
