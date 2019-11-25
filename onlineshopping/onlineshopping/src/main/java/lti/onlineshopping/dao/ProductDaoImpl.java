@@ -92,5 +92,21 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		return subcategory;
 	}
 	
+	public Product fetchDetails(int prodid){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("select p from Product p where p.product_id=:prodid");
+		//Integer idint = Integer.parseInt(prodid);
+		System.out.println("prodid:"+prodid);
+		query.setParameter("prodid", prodid);
+		
+		Product	product =(Product)query.getSingleResult();
+
+		
+		return product;
+		}
+
+	
+	
 
 }

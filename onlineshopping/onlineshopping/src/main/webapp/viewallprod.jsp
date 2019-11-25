@@ -53,7 +53,7 @@ System.out.println(products.size());
 						<li><%=product[2]%></li>
 						<li><%=product[3]%></li>
 						<li>Price - <%=product[5]%></li>
-						<li><a href="<%=url%>">Add to Cart</a></li>
+						<li><a href="<%=url%>">View Product</a></li>
 					</ul>
 				</p>
 			</div>

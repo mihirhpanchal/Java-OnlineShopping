@@ -8,7 +8,7 @@
 
         <properties>
            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
-           <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+           <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.101.31:1521:xe"/>
            <property name="javax.persistence.jdbc.user" value="hr"/>
            <property name="javax.persistence.jdbc.password" value="hr"/>
            <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
