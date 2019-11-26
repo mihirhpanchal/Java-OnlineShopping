@@ -28,7 +28,7 @@ import lti.onlineshopping.service.OrderServiceIntf;
 	OrderServiceIntf orderService;
 	
 	
-	@RequestMapping(value="/placeorder",method=RequestMethod.GET)
+/*	@RequestMapping(value="/placeorder",method=RequestMethod.GET)
 	public ModelAndView placeorder(HttpServletRequest request,HttpServletResponse response)
 	{
 		HttpSession session = request.getSession();
@@ -50,9 +50,9 @@ import lti.onlineshopping.service.OrderServiceIntf;
 		ModelAndView mav = new ModelAndView("ordersucessful");
 		mav.addObject("myorderid",myorderid);
 		return mav;
-	}
+	}*/
 	
-	@RequestMapping(value = "/orderconfirm", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/orderconfirm", method = RequestMethod.GET)
 	public ModelAndView orderconfirm(MyCart cart, HttpServletRequest request) {
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
@@ -71,6 +71,6 @@ import lti.onlineshopping.service.OrderServiceIntf;
 			mav.addObject("myorder",myorder);
 			return mav;
 		}
-		
+		*/
 	
 }

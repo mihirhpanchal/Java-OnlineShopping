@@ -122,7 +122,7 @@ input[type=number], select, textarea{
 </style>
 </head>
 <body>
- <header><%@ include file="shared/navbar.jsp"%></header> 
+ <header><%@ include file="shared/retailernavbar.jsp"%></header> 
 
 
 <div class="containerrp">
@@ -132,7 +132,7 @@ input[type=number], select, textarea{
 
 <div class="col" style="position:absolute;top:65px;left:175px;width:50%;z-index:105">
 
-<form action= "insertproduct.do" method= "post"  id= "register" modelAttribute= "product" action= "insertproduct.do" method= "post" enctype= "multipart/form-data">
+<form action= "insertproduct.do" method= "post"  id= "register" modelAttribute= "product" enctype= "multipart/form-data">
 
 	
 <!--   <form action="insertproduct.do" method="post"> -->

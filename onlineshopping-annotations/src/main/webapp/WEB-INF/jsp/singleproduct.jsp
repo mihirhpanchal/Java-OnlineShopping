@@ -73,6 +73,7 @@ Product products = null;
 			</div>
 		</div> --%>
 	<!-- </div> -->
+	
 	<div><%@ include file="../../shared/footer.jsp"%></div> 
 </body>
 </html>

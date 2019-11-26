@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Order Successful</title>
+<title>Insert title here</title>
 </head>
 <body>
-  <jsp:include page="/shared/navbar.jsp" />
-<h1>Order Successfully placed</h1>
-<h1>Your order Id is: ${myorderid}</h1>
-  <jsp:include page="/shared/footer.jsp" />
+<div><%@ include file="/shared/retailernavbar.jsp"%></div>
+ <%@ include file="WEB-INF/jsp/productGrid2.jsp"%> 
+ <%@ include file="shared/footer.jsp"%> 
 </body>
 </html>

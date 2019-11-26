@@ -15,6 +15,8 @@
            Product List</a>
  </c:if>
  <c:if test="${not empty mycart and not empty mycart.cartItem}">
+ <form action="orderconfirm.do">
+ <c:set var="total" value="0"></c:set>
  <table align="center" cellpadding="2" cellspacing="2" border="1">
 		<tr>
 			<th>Id</th>
@@ -24,7 +26,7 @@
 			<th>Quantity</th>
 			<th>Sub Total</th>
 </tr>
-<c:set var="total" value="0"></c:set>
+
 <c:forEach items="${mycart.cartItem}" var="cartItem">
 <c:set var="total" value="${total + cartItem.price * cartItem.quantity }"></c:set>
 <tr>
@@ -47,11 +49,13 @@
 		<tr>
 			<td colspan="6" align="right">Sum</td>
 			<td>${total } Rupees</td>
-		</tr>
+			<td><input type="hidden" name="total" id="total" value="${total}"/></td>
+		</tr>	
 	</table>
-	
+	<input type="submit" value="Confirm order">
+</form>
 
-<center><a href="/orderconfirm.do" class="btn btn-default">Confirm Order</a></center>
+<%-- <center><a href="${pageContext.request.contextPath }/orderconfirm.do" class="btn btn-default">Confirm Order</a></center> --%>
 
 </c:if>
   <jsp:include page="/shared/footer.jsp" />

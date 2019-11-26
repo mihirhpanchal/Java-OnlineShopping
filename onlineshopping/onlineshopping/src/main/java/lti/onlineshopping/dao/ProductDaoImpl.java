@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.Product;
+import lti.onlineshopping.model.Retailer;
 import lti.onlineshopping.model.SubCategory;
 
 @Repository("productDao")
@@ -147,5 +148,26 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		List<Object[]> searchList = em.createNativeQuery(sql).getResultList();
 		return searchList;*/
 		
-	}
+		}
+		
+		public boolean removeProduct(int id){
+			
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+			EntityManager em = emf.createEntityManager();
+			
+			boolean flag=false;
+			System.out.println("Id: "+id);
+			em.getTransaction().begin();
+			Query query = em.createQuery("DELETE FROM Product p WHERE p.product_id = :pid ");
+			query.setParameter("pid", id);
+			int rowsDeleted = query.executeUpdate();
+			System.out.println("Deleted rows: "+rowsDeleted);
+			em.getTransaction().commit();
+			em.close();
+			emf.close();
+			flag=true;
+			return flag;
+		
+		}
+		
 }
