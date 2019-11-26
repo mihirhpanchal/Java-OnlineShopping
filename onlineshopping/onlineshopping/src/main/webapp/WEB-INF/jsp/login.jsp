@@ -6,11 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 <style>
-.container{
+.container1{
 position:absolute;
 top:22%;
-left:18%;
-width:45%;
+left:28%;
+width:52%;
 height:75%;
 font-family:arial;
 z-index:100;
@@ -18,7 +18,7 @@ background-color:#F1F1F1;
 }
 .signup{
 position:relative;
-width:32%;
+width:35%;
 right:2%;
 height:100%;
 color:white;
@@ -57,7 +57,7 @@ input:hover,
 </head>
 <body>
  <header><%@ include file="../../shared/navbar.jsp"%></header> 
-<div class="container">
+<div class="container1">
 
 <div class="col" style="position:absolute;top:150px;left:315px;width:50%;z-index:105">
 <form action="loginProcess.do" modelattribute="users" method=post>
