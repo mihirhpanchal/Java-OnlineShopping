@@ -55,6 +55,19 @@
   opacity: 0.7;
 } */
 
+.footer-distributedsip{
+	position:absolute;
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 0px -10px;
+	margin-top: -650px;
+}
+
 /* Responsive columns */
 @media screen and (max-width: 600px) {
   .card {
@@ -74,6 +87,7 @@ body, h1, h2, h3, h4, h5 {
 	font-weight: bold
 }
 
+<<<<<<< HEAD
 /*magnify  */
 .img-magnifier-container {
   position:relative;
@@ -88,6 +102,10 @@ body, h1, h2, h3, h4, h5 {
   width: 100px;
   height: 100px;
 }
+=======
+
+
+>>>>>>> 70341300f275f0fc9148061d930bb058cc126ea5
 </style>
 <script>
 function magnify(imgID, zoom) {
@@ -160,7 +178,7 @@ Product products = null;
 	         String url = "singleproduct.do?prodid="+product[0]; 		    
 	 %> --%>
 	 
-
+</div>
 	 
 	 <%
 	 String url = "addtocart.do";
@@ -191,8 +209,13 @@ Product products = null;
 	Brand: <c:out value="${products.brand}"/><br><br>
 	<form action="addtocart.do" method="post">
 	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
+
+	<label>Quantity:</label>
+
+	<input type="hidden" name="pname" id="pname" value="${products.product_name }"/>
 	<input type="hidden" name="unitprice" id="unitprice" value="${products.unit_price }"/>
-	Quatity:
+	
+
 	<input type="number" name="qty" min="0" step="1" id="qty" required
 	title="Please enter the quantity"><br><br>
 	<input type="submit" value="Add to cart">
@@ -202,7 +225,11 @@ Product products = null;
 	
 		</div>
 		</div>
-		<div><%@ include file="../../shared/footer.jsp"%></div> 	
+		
+		
+		<div class="footer-distributedsip"><%@ include file="../../shared/footer.jsp"%></div> 	
+		
+		
 	<%-- <hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"

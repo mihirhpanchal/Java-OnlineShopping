@@ -10,10 +10,17 @@
 <style>
 .container{
 position:absolute;
+<<<<<<< HEAD
+top:22%;
+left:24%;
+width:55%;
+height:146%;
+=======
 top:20%;
 left:18%;
 width:55%;
 height:149%;
+>>>>>>> a2e61d2c5c5b386acd174c6ce0eee919d4798381
 
 font-family:arial;
 z-index:100;
