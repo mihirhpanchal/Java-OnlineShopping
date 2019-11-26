@@ -316,9 +316,3 @@ public class ProductController {
 		}
 	
 }
-	
-	
-	
-	
-	
-

@@ -86,8 +86,6 @@ body, h1, h2, h3, h4, h5 {
 .w3-sidenav a, .w3-sidenav h4 {
 	font-weight: bold
 }
-
-<<<<<<< HEAD
 /*magnify  */
 .img-magnifier-container {
   position:relative;
@@ -102,10 +100,6 @@ body, h1, h2, h3, h4, h5 {
   width: 100px;
   height: 100px;
 }
-=======
-
-
->>>>>>> 70341300f275f0fc9148061d930bb058cc126ea5
 </style>
 <script>
 function magnify(imgID, zoom) {
@@ -219,6 +213,9 @@ Product products = null;
 	<input type="number" name="qty" min="0" step="1" id="qty" required
 	title="Please enter the quantity"><br><br>
 	<input type="submit" value="Add to cart">
+	</form><br>
+	<form action="singleproductforcompare.do">
+		<input style="margin-left: 33%"  type="submit" value="Add to compare">
 	</form>
 			</div>
 		</div>
@@ -228,22 +225,6 @@ Product products = null;
 		
 		
 		<div class="footer-distributedsip"><%@ include file="../../shared/footer.jsp"%></div> 	
-		
-		
-	<%-- <hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
-		<div class="w3-third w3-container w3-margin-bottom">
-			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
-				class="w3-hover-opacity">
-			<div class="w3-container w3-white">
-				<h1>Product Name: <c:out value="${products.product_name }"/></h1><br>
-	<h2>Price: <c:out value="${products.unit_price }"/></h2><br>
-	Product Description:<c:out value="${products.product_description }"></c:out><br>
-	Category<c:out value="${products.category.category_name}"/><br>
-	Sub Category<c:out value="${products.subcategory.sub_name}"/><br> 
-	Brand:<c:out value="${products.brand}"/><br>
-			</div>
-		</div> --%>
-	<!-- </div> -->
 	
 </body>
 </html>
