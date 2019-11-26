@@ -22,6 +22,8 @@ public interface ProductDaoIntf {
 	public Product compareProduct(int prodid);
 
 	public List<Product> searchKeywords(String search);
+	
+	public boolean removeProduct(int id);
 
 	public boolean makePayment(Order order);
 }

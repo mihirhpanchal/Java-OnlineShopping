@@ -25,6 +25,20 @@ body, h1, h2, h3, h4, h5 {
 .w3-sidenav a, .w3-sidenav h4 {
 	font-weight: bold
 }
+
+.footer-distributedvap{
+	position:absolute;
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 0px 0px;
+	margin-top: -650px;
+}
+
 </style>
 </head>
 <body>
@@ -46,7 +60,7 @@ System.out.println(products.size());
 	 %>
 		<div class="w3-third w3-container w3-margin-bottom">
 			
-			<img src="<%=url1%>" height="100" width="100"	class="w3-hover-opacity">
+			<img src="<%=url1%>" height="380" width="260"	class="w3-hover-opacity">
 			<div class="w3-container w3-white">
 				<p>
 					<b><h3><%=product[1]%></h3></b>
@@ -64,6 +78,6 @@ System.out.println(products.size());
 	}
 	%>
 	</div>
-	<div><%@ include file="../../shared/footer.jsp"%></div> 
+	<div class="footer-distributedvap"><%@ include file="../../shared/footer.jsp"%></div> 
 </body>
 </html>

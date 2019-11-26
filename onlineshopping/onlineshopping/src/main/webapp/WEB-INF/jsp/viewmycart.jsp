@@ -5,15 +5,59 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cart</title>
 </head>
 <body>
+  <jsp:include page="/shared/navbar.jsp" />
+ <c:if test="${empty mycart or empty mycart.cartItem}">
+       <h2>There is no items in Cart</h2>
+       <a href="${pageContext.request.contextPath}/viewallprod.do">Show
+           Product List</a>
+ </c:if>
+ <c:if test="${not empty mycart and not empty mycart.cartItem}">
+ <form action="orderconfirm.do">
+ <c:set var="total" value="0"></c:set>
+ <table align="center" cellpadding="2" cellspacing="2" border="1">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Photo</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Sub Total</th>
+</tr>
 
 <c:forEach items="${mycart.cartItem}" var="cartItem">
-<c:out value="${cartItem.product_id}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br> 
-<hr>
+<c:set var="total" value="${total + cartItem.price * cartItem.quantity }"></c:set>
+<tr>
+<%-- 				<td align="center"><a
+					href="${pageContext.request.contextPath }/cart/remove/${item.product.id }"
+					onclick="return confirm('Are you sure?')">Remove</a></td> --%>
+				<td>${cartItem.product_id }</td>
+				<td>${cartItem.product_name }</td>
+				<td>product photo</td>
+				<td>${cartItem.price }</td>
+				<td>${cartItem.quantity }</td>
+				<td>${cartItem.price * cartItem.quantity }</td>
+			</tr>
+<%-- <c:out value="${cartItem.product_id}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br>  --%>
+
 </c:forEach>
 
-<a href="orderconfirm.do">Confirm Order</a>
+
+
+		<tr>
+			<td colspan="6" align="right">Sum</td>
+			<td>${total } Rupees</td>
+			<td><input type="hidden" name="total" id="total" value="${total}"/></td>
+		</tr>	
+	</table>
+	<input type="submit" value="Confirm order">
+</form>
+
+<%-- <center><a href="${pageContext.request.contextPath }/orderconfirm.do" class="btn btn-default">Confirm Order</a></center> --%>
+
+</c:if>
+  <jsp:include page="/shared/footer.jsp" />
 </body>
 </html>

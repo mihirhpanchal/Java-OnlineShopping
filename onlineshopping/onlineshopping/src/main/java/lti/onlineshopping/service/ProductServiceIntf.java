@@ -13,6 +13,7 @@ public interface ProductServiceIntf {
 	public Category getCategory(String categoryname);
 	
 	public SubCategory getSubCategory(String scategoryname);
+	
 	public List<Object[]> getProducts();
 	
 	public List<Object[]> getmyProducts();
@@ -22,5 +23,7 @@ public interface ProductServiceIntf {
 	public Product compareProduct(int prodid);
 	
 	public List<Product> searchKeywords(String search);
+	
+	public boolean removeProduct(int prodid);
 	
 }

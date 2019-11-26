@@ -1,13 +1,16 @@
 /* For AboutUs Section */
   .bg-1 {
+     top:20px;
       background-color: #5bc0de; /* Green */
-      color: #211935;
+      color: #443667;
   }
   .bg-2 {
+ top:20px;
       background-color: rgb(123,113,148); /* Dark Blue */
       color: #ffffff;
   }
   .bg-3 {
+  top:20px;
       background-color: #fff; /* White */
       color: #555555;
   }

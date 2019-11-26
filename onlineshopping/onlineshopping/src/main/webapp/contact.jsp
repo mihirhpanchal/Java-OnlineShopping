@@ -12,8 +12,7 @@
      * {
         box-sizing: border-box;
         text-align: center;
-       
-        
+      
         font-family: Verdana, Geneva, Tahoma, sans-serif;
        }
        
@@ -88,6 +87,21 @@
         .containerc {
         padding: 2px 8px;
         }
+        
+        .footer-distributedcon{
+	position:absolute;
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 0px 0px;
+	margin-top: 1000px;
+}
+        
+        
    </style>
 </head>
 <body>
@@ -95,15 +109,15 @@
  
 <div class="cardc">
 
-        <img src="" alt="Avatar" style="width:70%">
+        <img src="assets/images/mihir1.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Mihir Panchal</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
-
+ 
  <div class="cardc">
-        <img src="images/prajwal.jpg" alt="Avatar" style="width:70%">
+        <img src="assets/images/prachi.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Prachi Sharma</b></h4> 
           <p>Developer</p> 
@@ -111,19 +125,20 @@
  </div>
  <div style="margin:2px"></div>
  <div class="cardc">
-        <img src="images/arpita.jpg" alt="Avatar" style="width:70%">
+        <img src="assets/images/prachi.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Vaibhavi Chavan</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
  <div class="cardc">
-        <img src="images/nikhil.jpg" alt="Avatar" style="width:70%">
+        <img src="assets/images/prachi.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Lavina Budhwani</b></h4> 
           <p>Developer</p> 
         </div>       
- </div>
+ </div class=".footer-distributedcon">
  <%@ include file="shared/footer.jsp"%> 
+ </div>
 </body>
 </html>

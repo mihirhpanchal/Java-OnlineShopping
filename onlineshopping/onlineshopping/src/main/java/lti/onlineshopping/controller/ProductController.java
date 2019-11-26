@@ -42,11 +42,14 @@ public class ProductController {
 	{
 		HttpSession session = request.getSession();
 		MyCart mycart = (MyCart)session.getAttribute("mycart"); 
+		String total=request.getParameter("total");
+		System.out.println("total "+total);
 		String username = session.getAttribute("username").toString();
 		System.out.println(username);
 		List<CartItem> clist = mycart.getCartItem();
 		Order myorder = new Order();
 		myorder.setUsername(username);
+		myorder.setTotal(total);
 		myorder.setOrderItem(new ArrayList<OrderItem>());
 		//String username = session.getAttribute("username").toString();
 		//myorder.setUsername(username);
@@ -74,6 +77,8 @@ public class ProductController {
 	public ModelAndView orderconfirm(MyCart cart, HttpServletRequest request) {
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
+			String total=request.getParameter("total");
+			System.out.println("total "+total);
 			List<CartItem> clist = mycart.getCartItem();
 			Order myorder = new Order();
 			myorder.setOrderItem(new ArrayList<OrderItem>());
@@ -85,8 +90,10 @@ public class ProductController {
 				myorder.getOrderItem().add(orderItem);
 			 }
 			System.out.println(myorder);
+			myorder.setTotal(total);
 			ModelAndView mav = new ModelAndView("orderconfirm");
 			mav.addObject("myorder",myorder);
+			mav.addObject("total",total);
 			return mav;
 		}
 		
@@ -147,7 +154,7 @@ public class ProductController {
 		return mav;
 	}
 	
-	 @RequestMapping(value = "/insertprod.do", method = RequestMethod.GET)
+	 @RequestMapping(value = "/insertproduct.do", method = RequestMethod.GET)
 	  public ModelAndView showRegister2(HttpServletRequest request, HttpServletResponse response) {
 	    ModelAndView mav = new ModelAndView("regproduct");
 	    mav.addObject("product", new Product());
@@ -341,10 +348,16 @@ public class ProductController {
 		
 	}*/
 	
-}
-	
-	
-	
-	
-	
 
+
+	@RequestMapping(value = "/removeproduct", method = RequestMethod.GET)
+	public ModelAndView removeProduct( HttpServletRequest request,HttpServletResponse response){
+		
+		int prodid=Integer.parseInt(request.getParameter("prodid"));
+		boolean flag = productService.removeProduct(prodid);
+		ModelAndView mav = new ModelAndView("deletedproduct");
+		mav.addObject("text","Product successfully deleted");
+		 return mav;
+		}
+	
+}

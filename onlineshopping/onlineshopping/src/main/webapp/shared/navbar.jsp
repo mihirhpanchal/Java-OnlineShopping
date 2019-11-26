@@ -86,7 +86,8 @@
 				
 				<!-- 			Only admin can view this link -->
 <!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
-				<li><a href=" <c:url value="regproduct.jsp" />">Add Product</a></li>
+				<%-- <li><a href=" <c:url value="regproduct.jsp" />">Add Product</a></li> --%>
+				 	<%-- <li><a href=" <c:url value="retailer.jsp" />">Sell Products</a></li>  --%>
 				<li><div class="search-container">
     <form action="search.do">
       <input type="text" name="search" placeholder="Search..">
@@ -127,10 +128,17 @@
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
 					<li><a href="<c:url value="/viewmycart.do" />"><span
 							class="glyphicon glyphicon-shopping-cart"></span>My Cart</a></li>
-					<li><a href="<c:url value="/signup.do" />"><span
+							<%String uname1 = (String)session.getAttribute("username");
+							if(uname1==null){ %>
+							<li><a href="<c:url value="/signup.do" />"><span
 							class="glyphicon glyphicon-log-user"></span> SignUp</a></li>
-					<li><a href="<c:url value="/loginProcess.do" />"><span
+							<li><a href="<c:url value="/loginProcess.do" />"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							<%} %>
+							<%if(uname1!=null){ %>
+							<li><a href="<c:url value="/logoutProcess.do" />"><span
+							class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+							<%} %>
 				</c:if>
 			</ul>
 		</div>
