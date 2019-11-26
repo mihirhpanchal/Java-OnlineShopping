@@ -10,7 +10,9 @@
 <body>
 <body>
   <jsp:include page="/shared/navbar.jsp" />
-  
+ 
+<form action="placeorder.do">
+  <c:set var="total" value="0"></c:set>
  <table align="center" cellpadding="2" cellspacing="2" border="1">
 		<tr>
 			<th>Id</th>
@@ -20,7 +22,7 @@
 			<th>Quantity</th>
 			<th>Sub Total</th>
 </tr>
-<c:set var="total" value="0"></c:set>
+
 <c:forEach items="${mycart.cartItem}" var="cartItem">
 <c:set var="total" value="${total + cartItem.price * cartItem.quantity }"></c:set>
 <tr>
@@ -37,15 +39,25 @@
 <%-- <c:out value="${cartItem.product_id}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br>  --%>
 
 </c:forEach>
+
 		<tr>
 			<td colspan="6" align="right">Sum</td>
 			<td>${total } Rupees</td>
+			<td><input type="hidden" name="total" id="total" value="${total}"/></td>
 		</tr>
+		
+
 	</table>
+	
+	<input type="submit" value="Confirm order">
+
+</form>
 <%-- <c:forEach items="${myorder.orderItem}" var="orderItem">
 <c:out value="${orderItem.prodid}"/> &nbsp;<c:out value="${orderItem.quantity}"/>  &nbsp;<c:out value="${orderItem.price}"/><br> 
 <hr>
 </c:forEach> --%>
-<a href="placeorder.do">Place Order</a>
+
+
+<%-- <center><a href="${pageContext.request.contextPath }/placeorder.do" class="btn btn-default">Place Order</a></center> --%>
 </body>
 </html>

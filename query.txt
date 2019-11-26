@@ -36,3 +36,27 @@ select sub_id from subcategory where sub_name='Mobile'
 
 select * from product
 desc product
+
+
+create table Myorder (int order
+
+
+
+
+
+
+create table Myorder (orderid number(10,0) not null, total varchar2(255 char), username varchar2(255 char), primary key (orderid))
+
+create table Myorder_OrderItem (Order_orderid number(10,0) not null, orderItem_oiid number(10,0) not null)
+
+create table OrderItem (oiid number(10,0) not null, price varchar2(255 char), prodid number(10,0) not null, quantity number(10,0) not null, orderid number(10,0), primary key (oiid))
+
+alter table Myorder_OrderItem drop constraint UK_i3sbyvtmrsh5efj45qcqmh7et
+
+alter table Myorder_OrderItem add constraint UK_i3sbyvtmrsh5efj45qcqmh7et unique (orderItem_oiid)
+
+alter table Myorder_OrderItem add constraint FK8q7qjxglswj2xdi7b53on3xmc foreign key (orderItem_oiid) references OrderItem
+
+alter table Myorder_OrderItem add constraint FK2kvhp8b07f877b0e2ugj9fg8i foreign key (Order_orderid) references Myorder
+
+alter table OrderItem add constraint FKigi0obg869o010wug5oh8x6js foreign key (orderid) references Myorder
