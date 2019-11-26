@@ -6,11 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 <style>
-.container{
+.container1{
 position:absolute;
 top:22%;
-left:18%;
-width:45%;
+left:28%;
+width:52%;
 height:75%;
 font-family:arial;
 z-index:100;
@@ -18,7 +18,7 @@ background-color:#F1F1F1;
 }
 .signup{
 position:relative;
-width:32%;
+width:35%;
 right:2%;
 height:100%;
 color:white;
@@ -53,14 +53,31 @@ input:hover,
 .btn:hover {
   opacity: 1;
 }
+
+.footer-distributed1{
+	position:absolute;
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 0px 0px;
+	margin-top: -400px;
+}
+
+
 </style>
 </head>
 <body>
  <header><%@ include file="../../shared/navbar.jsp"%></header> 
-<div class="container">
+<div class="container1">
 
 <div class="col" style="position:absolute;top:150px;left:315px;width:50%;z-index:105">
-<form action="loginProcess.do">
+<form action="loginProcess.do" modelattribute="users" method=post>
+		<center><p style="font-style: italic; color: #263238;">${status}</p></center>
+		<center><p>${status1}</p></center>
         <input type="text" name="username" placeholder="Username" required> <br><br>
         <input type="password" name="password" placeholder="Password" required><br><br>
         <input type="submit" value="Login">
@@ -73,6 +90,6 @@ input:hover,
 
 </div>
 
- <div><%@ include file="../../shared/footer.jsp"%></div>
+ <div class="footer-distributed1"><%@ include file="../../shared/footer.jsp"%></div>
 </body>
 </html>
