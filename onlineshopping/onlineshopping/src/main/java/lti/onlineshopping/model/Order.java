@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,9 +17,7 @@ public class Order {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int orderid;
 	
-	@ManyToOne()
-	@JoinColumn(name="username")
-	private User user;
+	private String username;
 	
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<OrderItem> orderItem;
@@ -36,12 +32,12 @@ public class Order {
 		this.orderid = orderid;
 	}
 
-	public User getUser() {
-		return user;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public List<OrderItem> getOrderItem() {
@@ -66,7 +62,7 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [orderid=" + orderid + ", user=" + user + ", orderItem=" + orderItem + ", total=" + total + "]";
+		return "Order [orderid=" + orderid + ", username=" + username + ", orderItem=" + orderItem + ", total=" + total + "]";
 	} 
 	
 	

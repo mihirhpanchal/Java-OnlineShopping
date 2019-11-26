@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Order Successfully placed</h1>
+<h1>Your order Id is: ${myorderid}</h1>
 </body>
 </html>

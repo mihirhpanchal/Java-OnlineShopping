@@ -12,13 +12,14 @@ import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 
+
+
 @Service("productService")
 public class ProductServiceImpl implements ProductServiceIntf {
 
 	@Autowired
 	ProductDaoIntf productDao;
 	
-	@Transactional
 	public boolean insertProduct(Product product) {
 		System.out.println("Service is called");
 		boolean flag=productDao.insertProduct(product);
@@ -26,48 +27,41 @@ public class ProductServiceImpl implements ProductServiceIntf {
 		return flag;
 	}
 
-	@Transactional
 	public Category getCategory(String categoryname){
 		System.out.println("Category service is called");
 		Category c =productDao.getCategory(categoryname);
 		return c;
 	}
 
-	@Transactional
 	public SubCategory getSubCategory(String scategoryname) {
 		System.out.println("Category service is called");
 		SubCategory s =productDao.getSubCategory(scategoryname);
 		return s;
 	}
 	
-	@Transactional
-	public List<Object[]> getUsers() {
+	public List<Object[]> getProducts() {
 		List<Object[]> list = productDao.getProducts();
 		return list;
 	}
 	
-	@Transactional
-	public List<Object[]> getmyUsers() {
+	public List<Object[]> getmyProducts() {
 		List<Object[]> list = new ProductDaoImpl().getProducts();
 		return list;
 	}
-
-	@Transactional
 	public Product  fetchDetails(int prodid){
 		Product product = productDao.fetchDetails(prodid);
 		return product;
 	}
 	
-	@Transactional
 	public Product compareProduct(int prodid) {
 		Product product = new ProductDaoImpl().compareProduct(prodid);
 		return product;
 	}
-
-	@Transactional
+	
 	public List<Product> searchKeywords(String search){
 		System.out.println("Search service called");
 		return  productDao.searchKeywords(search);
 	}
-}
 
+
+}

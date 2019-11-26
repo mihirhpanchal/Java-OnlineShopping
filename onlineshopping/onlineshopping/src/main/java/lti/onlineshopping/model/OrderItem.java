@@ -22,7 +22,7 @@ public class OrderItem {
     @JoinColumn(name="orderid")
     private Order order;
     
-	private double price;
+	private String price;
 
 	public int getOiid() {
 		return oiid;
@@ -56,11 +56,12 @@ public class OrderItem {
 		this.order = order;
 	}
 
-	public double getPrice() {
+
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

@@ -29,7 +29,7 @@ body, h1, h2, h3, h4, h5 {
 </head>
 <body>
 <%
-List<Object[]> products = new ProductServiceImpl().getmyUsers();
+List<Object[]> products = new ProductServiceImpl().getmyProducts();
 System.out.println(products.size());
 %>
 	<hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">

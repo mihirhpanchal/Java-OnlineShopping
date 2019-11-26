@@ -11,7 +11,7 @@
 </head>
 <body>
 <%
-List<Object[]> products = new ProductServiceImpl().getmyUsers();
+List<Object[]> products = new ProductServiceImpl().getmyProducts();
 System.out.println(products.size());
 %>	
 	 		<h3>Products Page</h3>
