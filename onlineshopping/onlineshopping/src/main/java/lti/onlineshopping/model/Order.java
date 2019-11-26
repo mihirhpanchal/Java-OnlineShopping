@@ -1,5 +1,6 @@
 package lti.onlineshopping.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="Myorder")
@@ -19,10 +22,13 @@ public class Order {
 	
 	private String username;
 	
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<OrderItem> orderItem;
 	
-	private float total;
+	private String total;
+	
+	@Temporal(TemporalType.DATE)
+	private Date date_added;
 
 	public int getOrderid() {
 		return orderid;
@@ -48,11 +54,13 @@ public class Order {
 		this.orderItem = orderItem;
 	}
 
-	public float getTotal() {
+	
+
+	public String getTotal() {
 		return total;
 	}
 
-	public void setTotal(float total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 

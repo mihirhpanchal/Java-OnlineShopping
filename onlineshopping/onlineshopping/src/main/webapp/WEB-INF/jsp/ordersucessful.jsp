@@ -7,7 +7,9 @@
 <title>Order Successful</title>
 </head>
 <body>
+  <jsp:include page="/shared/navbar.jsp" />
 <h1>Order Successfully placed</h1>
 <h1>Your order Id is: ${myorderid}</h1>
+  <jsp:include page="/shared/footer.jsp" />
 </body>
 </html>
