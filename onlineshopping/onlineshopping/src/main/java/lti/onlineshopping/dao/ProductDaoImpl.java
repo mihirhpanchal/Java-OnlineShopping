@@ -6,12 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
 import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Order;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 
@@ -146,6 +146,31 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		@SuppressWarnings("unchecked")
 		List<Object[]> searchList = em.createNativeQuery(sql).getResultList();
 		return searchList;*/
+		}
 		
+			public boolean makePayment(Order order){
+				boolean flag = false;
+				EntityManagerFactory emf1 = Persistence.createEntityManagerFactory("pu");
+				EntityManager em1 = emf1.createEntityManager();
+				
+				try{
+					
+					System.out.println(order);
+					em1.getTransaction().begin();
+					em1.persist(order);
+					em1.getTransaction().commit();
+					em1.close();
+					System.out.println("end");
+					flag = true;
+					
+				}
+				catch(Exception e){
+					System.out.println("Error"+e);
+				}
+					return flag;
+				
+			}
+			
+			
 	}
-}
+

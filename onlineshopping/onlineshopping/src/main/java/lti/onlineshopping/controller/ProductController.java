@@ -25,6 +25,7 @@ import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.MyCart;
 import lti.onlineshopping.model.Order;
 import lti.onlineshopping.model.OrderItem;
+import lti.onlineshopping.model.Payment;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 import lti.onlineshopping.service.OrderServiceIntf;
@@ -304,6 +305,41 @@ public class ProductController {
 		}
 
 	}
+	
+	/*@RequestMapping(value="/payment.do", method = RequestMethod.POST)
+	public ModelAndView makepayment(HttpServletRequest request,HttpServletResponse response,HttpSession session){
+		String card_type=request.getParameter("card_type");
+		System.out.println("card_type"+card_type);
+		String card_number=request.getParameter("card_name");
+		System.out.println("card_number");
+		//order_id = request.getAttribute(order_id);
+		String category=request.getParameter("category");
+		String expirydate = request.getParameter(expirydate);
+
+		Order order =(Order)session.getAttribute("order");
+		Payment payment = new Payment();
+		payment.setCard_number(card_number);
+		payment.setCard_type(card_type);
+		payment.setCategory(category);
+		payment.setCvv(cvv);
+		payment.setDate(date);
+		payment.setExpirydate(expirydate);
+		payment.setOrder_id(order_id);
+		payment.setPayment_id(payment_id);
+		
+		
+		
+		
+		private String payment_id;
+		private String order_id;
+
+		private String category;
+		private String cvv;
+		private Date date;
+		
+		
+		
+	}*/
 	
 }
 	

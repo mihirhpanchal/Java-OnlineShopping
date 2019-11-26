@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import lti.onlineshopping.dao.ProductDaoImpl;
 import lti.onlineshopping.dao.ProductDaoIntf;
 import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Order;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 
@@ -61,6 +62,11 @@ public class ProductServiceImpl implements ProductServiceIntf {
 	public List<Product> searchKeywords(String search){
 		System.out.println("Search service called");
 		return  productDao.searchKeywords(search);
+	}
+	public boolean makePayment(Order order){
+		
+		return productDao.makePayment(order);
+		
 	}
 
 }

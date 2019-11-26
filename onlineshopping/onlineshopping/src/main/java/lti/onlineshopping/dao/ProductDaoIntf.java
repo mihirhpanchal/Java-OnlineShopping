@@ -3,6 +3,7 @@ package lti.onlineshopping.dao;
 import java.util.List;
 
 import lti.onlineshopping.model.Category;
+import lti.onlineshopping.model.Order;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
 
@@ -22,4 +23,5 @@ public interface ProductDaoIntf {
 
 	public List<Product> searchKeywords(String search);
 
+	public boolean makePayment(Order order);
 }

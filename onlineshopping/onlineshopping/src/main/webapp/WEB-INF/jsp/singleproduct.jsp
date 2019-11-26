@@ -100,16 +100,25 @@ Product products = null;
 	   <div class="price">
 
 		<div class="w3-third w3-container w3-margin-bottom">
-			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
-				class="w3-hover-opacity">
+			<%-- <img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
+				class="w3-hover-opacity"> --%>
+				
+				
 			<div class="w3-container w3-white">
 			</div>
 			</div>
 			
 	  <div class="card">
 	  <div class="price">
-			
-				<h2>Product Name: <c:out value="${products.product_name }"/></h2>
+	  <%  //String urls = "http://localhost:8084/onlineshopping/download/image.do?fileName=${products.filename}" ;
+	  
+	  String urls="http://localhost:8084/onlineshopping/download/image.do?fileName=${products.filename}";
+	   System.out.println("url:"+urls);
+	  %>
+	  <img src="http://localhost:8084/onlineshopping/download/image.do?fileName=${products.filename}" height="100" width="100"><br>
+	  
+	  
+	<h2>Product Name: <c:out value="${products.product_name }"/></h2>
 	<h2><label name="price">Price: <c:out value="${products.unit_price }"/></label></h2>
 	Product Description: <c:out value="${products.product_description }"></c:out><br> <br>
 	Category: <c:out value="${products.category.category_name}"/><br><br>
@@ -118,7 +127,7 @@ Product products = null;
 	<form action="addtocart.do" method="post">
 	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
 	<input type="hidden" name="unitprice" id="unitprice" value="${products.unit_price }"/>
-	Quatity:
+	Quantity:
 	<input type="number" name="qty" min="0" step="1" id="qty" required
 	title="Please enter the quantity"><br><br>
 	<input type="submit" value="Add to cart">
@@ -128,8 +137,8 @@ Product products = null;
 	
 		</div>
 		</div>
-		<div><%@ include file="../../shared/footer.jsp"%></div> 	
-	<%-- <hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
+	<%-- 	<div><%@ include file="../../shared/footer.jsp"%></div> 	
+	<hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity">
@@ -141,8 +150,8 @@ Product products = null;
 	Sub Category<c:out value="${products.subcategory.sub_name}"/><br> 
 	Brand:<c:out value="${products.brand}"/><br>
 			</div>
-		</div> --%>
-	<!-- </div> -->
-	
-</body>
+		</div>
+	<!-- </div> --> --%>
+	 
+	  		</body>
 </html>
