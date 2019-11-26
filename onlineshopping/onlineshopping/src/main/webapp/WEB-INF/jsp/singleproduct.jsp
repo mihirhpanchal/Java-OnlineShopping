@@ -117,6 +117,7 @@ Product products = null;
 	Brand: <c:out value="${products.brand}"/><br><br>
 	<form action="addtocart.do" method="post">
 	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
+	<input type="hidden" name="pname" id="pname" value="${products.product_name }"/>
 	<input type="hidden" name="unitprice" id="unitprice" value="${products.unit_price }"/>
 	Quatity:
 	<input type="number" name="qty" min="0" step="1" id="qty" required
