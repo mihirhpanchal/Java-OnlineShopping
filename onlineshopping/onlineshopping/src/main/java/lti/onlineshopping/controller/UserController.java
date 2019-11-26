@@ -21,7 +21,14 @@ public class UserController {
 	@Autowired
 	private UserServiceIntf userService;
 	
-	@RequestMapping(value="/signup", method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value = "/signup", method=RequestMethod.GET)
+	public ModelAndView getSignUpPage() {
+		
+		ModelAndView mav = new ModelAndView("signup");
+		return mav;
+	}
+	
+	@RequestMapping(value="/signup", method=RequestMethod.POST)
 	public ModelAndView insertUser(HttpServletRequest request, HttpServletResponse response){
 		
 		String username = request.getParameter("username");
@@ -41,6 +48,7 @@ public class UserController {
 			ModelAndView mav = new ModelAndView("login");
 			mav.addObject("login", new User());
 			mav.addObject("status", "Registration successful");
+			mav.addObject("status1", "Please Login to continue");
 			return mav;
 		}
 		else{
@@ -51,21 +59,40 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,   @ModelAttribute User iuser) {
+	@RequestMapping(value = "/loginProcess", method=RequestMethod.GET)
+	public ModelAndView getLoginPage() {
+		
+		ModelAndView mav = new ModelAndView("login");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/loginProcess", method= RequestMethod.POST)
+	  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,   @ModelAttribute("users") User iuser) {
+		System.out.println("Controller called");
 	    ModelAndView mav = null;
 	    User user = userService.validateUser(iuser);
 	    if (user != null) {
-	      mav = new ModelAndView("welcome");
-	      mav.addObject("username", user.getUsername());
+	      mav = new ModelAndView("redirect:/indexPostLogin.jsp");
+	     /* mav.addObject("username", user.getUsername());*/
 	      //session manage
 	      HttpSession session= request.getSession();
 	      session.setAttribute("username", iuser.getUsername());
-	    } else {
+	    } 
+	    else {
 	      mav = new ModelAndView("login");
 	      mav.addObject("message", "Username or Password is wrong!!");
 	    }
 	    return mav;
 	  }
+	
+	
+	@RequestMapping(value = "/logoutProcess", method= RequestMethod.GET)
+	  public ModelAndView logoutProcess(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+		System.out.println(session.getAttribute("username"));
+		HttpSession session1 =request.getSession(false);
+		session1.invalidate();
+		ModelAndView mav = new ModelAndView("redirect:/index.jsp");
+		return mav;
+	}
 	
 }

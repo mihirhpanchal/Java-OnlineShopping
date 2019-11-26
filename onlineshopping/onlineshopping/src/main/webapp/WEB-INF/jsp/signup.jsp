@@ -76,10 +76,10 @@ input:hover,
 <div class="containersu">
 
 <div class="col" style="position:absolute;top:90px;left:275px;width:50%;z-index:105">
-	<form name="myForm" action="home.jsp">
+	<form name="myForm" action="signup.do" modelattribute="users" method="POST">
         <input type="text" name="username" placeholder="Username" autofoccus required><br><br>
 
-	 <input type="tel" pattern="[789][0-9]{9}" name="Mobile Number" placeholder="Mobile Number" autofoccus required
+	 <input type="tel" pattern="[789][0-9]{9}" name="cno" placeholder="Mobile Number" autofoccus required
 		title="Values should be Numeric and It should be of 10 digits only"><br><br>
 
 	 <input type="email" name="email" placeholder="email" autofoccus required
@@ -92,6 +92,7 @@ input:hover,
 	 <input type="password" name="confirmpassword" placeholder="Confirm Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"  required><br><br>
         <input type="submit" value="Signup" >
 </form>
+	<center><p style="font-style: italic; color: red;">${status}</p></center>
 	</div>
 <div class="signup">&nbsp;&nbsp;&nbsp;&nbsp;Signup<br>
 <span style="position:absolute;top:120px;left:30px;font-size:21px;line-height:22px;width:200px">We do not share your personal details with anyone
