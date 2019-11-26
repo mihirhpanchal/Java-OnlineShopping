@@ -8,10 +8,10 @@
 <style>
 .containerregp{
 position:absolute;
-top:18%;
-left:18%;
+top:22%;
+left:24%;
 width:55%;
-height:145%;
+height:146%;
 
 font-family:arial;
 z-index:100;

@@ -12,8 +12,7 @@
      * {
         box-sizing: border-box;
         text-align: center;
-       
-        
+      
         font-family: Verdana, Geneva, Tahoma, sans-serif;
        }
        
@@ -95,15 +94,15 @@
  
 <div class="cardc">
 
-        <img src="" alt="Avatar" style="width:70%">
+        <img src="assets/images/mihir1.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Mihir Panchal</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
-
+ 
  <div class="cardc">
-        <img src="images/prajwal.jpg" alt="Avatar" style="width:70%">
+        <img src="assets/images/prachi.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Prachi Sharma</b></h4> 
           <p>Developer</p> 
@@ -111,14 +110,14 @@
  </div>
  <div style="margin:2px"></div>
  <div class="cardc">
-        <img src="images/arpita.jpg" alt="Avatar" style="width:70%">
+        <img src="assets/images/prachi.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Vaibhavi Chavan</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
  <div class="cardc">
-        <img src="images/nikhil.jpg" alt="Avatar" style="width:70%">
+        <img src="assets/images/prachi.png" alt="Avatar" style="width:70%">
         <div class="containerc">
           <h4><b>Lavina Budhwani</b></h4> 
           <p>Developer</p> 

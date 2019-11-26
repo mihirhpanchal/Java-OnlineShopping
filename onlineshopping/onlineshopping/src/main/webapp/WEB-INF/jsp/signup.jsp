@@ -9,7 +9,7 @@ position:absolute;
 top:22%;
 left:28%;
 width:48%;
-height:75%;
+height:79%;
 font-family:arial;
 z-index:100;
 background-color:#F1F1F1;
@@ -85,11 +85,12 @@ input:hover,
 	 <input type="email" name="email" placeholder="email" autofoccus required
 		title="The required format is aa@bb.cc"><br><br>
 
-        <input type="password" name="password" placeholder="Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"  required><br><br>
+        <input type="password" name="password" placeholder="Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"  autofocus required
+        title="Password should contain atleast one Uppercase,Lowercase and Number as well as it should be of minimum 6 characters"><br><br>
 
 
 
-	 <input type="password" name="confirmpassword" placeholder="Confirm Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"  required><br><br>
+	 <input type="password" name="confirmpassword" placeholder="Confirm Password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" autofocus required><br><br>
         <input type="submit" value="Signup" >
 </form>
 	<center><p style="font-style: italic; color: red;">${status}</p></center>
