@@ -87,13 +87,21 @@
 				<!-- 			Only admin can view this link -->
 <!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
 				<li><a href=" <c:url value="regproduct.jsp" />">Add Product</a></li>
-				
 				<li><div class="search-container">
     <form action="search.do">
       <input type="text" name="search" placeholder="Search..">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-  </div></li>	
+  </div></li>
+				<%String uname = (String)session.getAttribute("username"); %>
+				<%if(uname==null){ %>
+				<li><font style="color: white; font-size:20px;">&nbsp;&nbsp;&nbsp;Hello, Guest</font></li>
+				<%} %>
+				<%if(uname!=null){ %>
+				<li><font style="color: white; font-size: 20px;">&nbsp;&nbsp;&nbsp;Hello, ${username}</font></li>
+				<%} %>
+				
+					
 				
 <!-- 				</security:authorize> -->
 			</ul>

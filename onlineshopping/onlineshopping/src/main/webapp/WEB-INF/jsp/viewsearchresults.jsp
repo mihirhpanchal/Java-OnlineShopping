@@ -8,7 +8,7 @@
 <title>Search Results</title>
 </head>
 <body>
-<div><%@ include file="/shared/navbar2.jsp"%></div>
+<div><%@ include file="/shared/navbar.jsp"%></div>
 <c:forEach items="${searchList}" var="product">
 	<hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 	

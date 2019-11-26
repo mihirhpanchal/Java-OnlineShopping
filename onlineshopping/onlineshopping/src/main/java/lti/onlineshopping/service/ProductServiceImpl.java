@@ -63,5 +63,4 @@ public class ProductServiceImpl implements ProductServiceIntf {
 		return  productDao.searchKeywords(search);
 	}
 
-
 }

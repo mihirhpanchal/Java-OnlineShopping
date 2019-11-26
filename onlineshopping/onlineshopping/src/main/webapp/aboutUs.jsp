@@ -18,7 +18,7 @@
 <body>
 
 <!-- importing navigation bar -->
-<%@ include file="/shared/navbar.jsp"%>
+<div><%@ include file="/shared/navbar.jsp"%></div>
 
 <!-- Content -->
 	<div class="row" style="margin-top:4px; margin-right:0px; margin-left:0px;margin-bottom:19px ">

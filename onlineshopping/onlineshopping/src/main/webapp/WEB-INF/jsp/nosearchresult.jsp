@@ -7,7 +7,7 @@
 <title>Oops</title>
 </head>
 <body>
-<div><%@ include file="/shared/navbar2.jsp"%></div>
+<div><%@ include file="/shared/navbar.jsp"%></div>
 	<br><br><br><br><br><br>
 	<center><h1><p style="font-style: italic; color: red;">${result}</p></h1></center>
 <div><%@ include file="../../shared/footer.jsp"%></div>

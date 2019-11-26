@@ -29,11 +29,10 @@ body, h1, h2, h3, h4, h5 {
 </style>
 </head>
 <body>
+<div><%@ include file="/shared/navbar.jsp"%></div>
 <form action="singleproductforcompare1.do">
 	<a href="viewallprod">Add product to compare</a>
 </form>
-
-<div><%@ include file="/shared/navbar2.jsp"%></div>
 
 	<hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 	
