@@ -126,7 +126,7 @@ Product products = null;
 	
 		</div>
 		</div>
-			
+		<div><%@ include file="../../shared/footer.jsp"%></div> 	
 	<%-- <hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
@@ -141,6 +141,6 @@ Product products = null;
 			</div>
 		</div> --%>
 	<!-- </div> -->
-	<div><%@ include file="../../shared/footer.jsp"%></div> 
+	
 </body>
 </html>

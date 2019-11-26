@@ -6,12 +6,12 @@
 <meta charset="ISO-8859-1">
 <title>Product Registration</title>
 <style>
-.container{
+.containerregp{
 position:absolute;
-top:20%;
+top:18%;
 left:18%;
 width:55%;
-height:149%;
+height:145%;
 
 font-family:arial;
 z-index:100;
@@ -117,7 +117,7 @@ input[type=number], select, textarea{
  <header><%@ include file="shared/navbar.jsp"%></header> 
 
 
-<div class="container">
+<div class="containerregp">
 
 <div class="product">Add New Product<br> </div>
 
