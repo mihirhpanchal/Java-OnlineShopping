@@ -15,7 +15,11 @@ public interface ProductDaoIntf {
 	public SubCategory getSubCategory(String scategoryname);
 	
 	public List<Object[]> getProducts();
+	
 	public Product fetchDetails(int prodid);
 	
+	public Product compareProduct(int prodid);
+
+	public List<Product> searchKeywords(String search);
 
 }

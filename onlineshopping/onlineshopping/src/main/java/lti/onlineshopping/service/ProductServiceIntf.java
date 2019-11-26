@@ -15,5 +15,13 @@ public interface ProductServiceIntf {
 	public SubCategory getSubCategory(String scategoryname);
 	
 	public List<Object[]> getUsers();
+	
+	public List<Object[]> getmyUsers();
+	
 	public Product  fetchDetails(int prodid);
+	
+	public Product compareProduct(int prodid);
+	
+	public List<Product> searchKeywords(String search);
+	
 }

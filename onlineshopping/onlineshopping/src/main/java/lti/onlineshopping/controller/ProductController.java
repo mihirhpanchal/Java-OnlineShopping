@@ -192,6 +192,40 @@ public class ProductController {
 		mav.addObject("products",products);
 		return mav;
 	}
+	
+	
+	@RequestMapping(value = "/singleproductforcompare", method = RequestMethod.GET)
+	public ModelAndView compare(HttpServletRequest request) {
+		int prodid=Integer.parseInt(request.getParameter("prodid"));
+		Product products = productService.compareProduct(prodid);
+		ModelAndView mav = new ModelAndView("compare");
+		mav.addObject("products",products);
+		
+		return mav;
+	}
+	
+	@RequestMapping(value="/search", method=RequestMethod.GET)
+	public ModelAndView viewSearchResults(HttpServletRequest request,HttpServletResponse response){
+		
+		String search = request.getParameter("search");
+		
+		System.out.println(search);
+		
+		List<Product> searchList = productService.searchKeywords(search);
+		if(searchList.size()!=0){
+			System.out.println( searchList.size());
+			ModelAndView mav = new ModelAndView("viewsearchresults");
+			mav.addObject("searchList", searchList);
+			return mav;
+		}
+		else{
+			ModelAndView mav = new ModelAndView("nosearchresult");
+			mav.addObject("result", "Sorry, no product for the proposed search found");
+			return mav;
+		}
+
+	}
+	
 }
 	
 	

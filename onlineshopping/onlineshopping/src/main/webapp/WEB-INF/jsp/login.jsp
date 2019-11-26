@@ -67,7 +67,7 @@ input:hover,
         <input type="password" name="password" placeholder="Password" required><br><br>
         <input type="submit" value="Login">
 </form>
-	<p style="font-style: italic; color: red;">${message}</p>
+	<center><p style="font-style: italic; color: red;">${message}</p></center>
 	</div>
 <div class="signup">&nbsp;&nbsp;&nbsp;&nbsp;Login<br>
 <span style="position:absolute;top:120px;left:30px;font-size:21px;line-height:22px;width:150px">Get access to your Orders, Wishlist and Recommendations
