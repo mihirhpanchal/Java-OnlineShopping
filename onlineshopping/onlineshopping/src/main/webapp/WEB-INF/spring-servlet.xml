@@ -33,6 +33,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">  -->
 		<property name="url" value="jdbc:oracle:thin:@192.168.101.31:1521:xe" />
 		<property name="username" value="hr" />
 		<property name="password" value="hr" />
+<<<<<<< HEAD
 </bean>
 <!-- EntityManagerFactory -->   
 <bean id="entityManagerFactory" 
@@ -56,4 +57,16 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">  -->
 
  
  
+=======
+   </bean>
+  
+  <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+  </bean> 
+  
+  <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ <!-- setting maximum upload size -->
+		<property name="maxUploadSize" value="10000000" />
+ </bean>
+>>>>>>> 887a24133ff06c36ceea3ad2c1911504a1118d76
 </beans>

@@ -39,11 +39,14 @@ System.out.println(products.size());
 	 <%
 	    for( Object[] product :products){
 	         String url = "singleproduct.do?prodid="+product[0]; 	
+	         String url1="http://localhost:8084/onlineshopping/download/image.do?fileName="+product[7]; 
+	         System.out.println("url1:"+url1);
+	        /*  String url = "singleproduct.do?prodid="+product[0];  */	
 	    
 	 %>
 		<div class="w3-third w3-container w3-margin-bottom">
-			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
-				class="w3-hover-opacity">
+			
+			<img src="<%=url1%>" height="100" width="100"	class="w3-hover-opacity">
 			<div class="w3-container w3-white">
 				<p>
 					<b><h3><%=product[1]%></h3></b>
