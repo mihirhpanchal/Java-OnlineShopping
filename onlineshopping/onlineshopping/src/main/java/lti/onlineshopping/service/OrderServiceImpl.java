@@ -10,6 +10,7 @@ public class OrderServiceImpl implements OrderServiceIntf {
 
 	@Autowired
 	OrderDaoIntf orderDao;
+	
 	public boolean addOrder(Order order) {
 		System.out.println("Service is called");
 		boolean flag=orderDao.addOrder(order);

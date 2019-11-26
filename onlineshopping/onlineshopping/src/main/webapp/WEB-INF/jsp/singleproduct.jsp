@@ -110,13 +110,14 @@ Product products = null;
 	  <div class="price">
 			
 				<h2>Product Name: <c:out value="${products.product_name }"/></h2>
-	<h2>Price: <c:out value="${products.unit_price }"/></h2>
+	<h2><label name="price">Price: <c:out value="${products.unit_price }"/></label></h2>
 	Product Description: <c:out value="${products.product_description }"></c:out><br> <br>
 	Category: <c:out value="${products.category.category_name}"/><br><br>
 	Sub Category: <c:out value="${products.subcategory.sub_name}"/><br> <br>
 	Brand: <c:out value="${products.brand}"/><br><br>
 	<form action="addtocart.do" method="post">
 	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
+	<input type="hidden" name="unitprice" id="unitprice" value="${products.unit_price }"/>
 	Quatity:
 	<input type="number" name="qty" id="qty" required><br><br>
 	<input type="submit" value="Add to cart">

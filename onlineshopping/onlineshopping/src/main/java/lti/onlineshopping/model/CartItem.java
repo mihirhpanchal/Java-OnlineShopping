@@ -3,8 +3,6 @@ package lti.onlineshopping.model;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 public class CartItem {
 
@@ -14,15 +12,9 @@ public class CartItem {
 
 	private int quantity;
 
-	private double price;
+	private String price;
 
-	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private Product product;
-
-	@ManyToOne
-	@JoinColumn(name = "cartId")
-	private Cart cart;
+	private int product_id;
 
 	public String getCartItemId() {
 		return cartItemId;
@@ -40,32 +32,30 @@ public class CartItem {
 		this.quantity = quantity;
 	}
 
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
-	public Product getProduct() {
-		return product;
+	public int getProduct_id() {
+		return product_id;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
 	}
 
 	public CartItem() {
 		super();
+	}
+
+	@Override
+	public String toString() {
+		return "CartItem [cartItemId=" + cartItemId + ", quantity=" + quantity + ", price=" + price + ", product_id="
+				+ product_id + "]";
 	}
 	
 	

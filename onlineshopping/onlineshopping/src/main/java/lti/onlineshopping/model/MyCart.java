@@ -1,26 +1,16 @@
 package lti.onlineshopping.model;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 public class MyCart {
 
-	private List<MyCartItem> cartItem;
+	private List<CartItem> cartItem;
 
-	public List<MyCartItem> getCartItem() {
+	public List<CartItem> getCartItem() {
 		return cartItem ;
 	}
 
-	public void setCartItem(List<MyCartItem> cartItem) {
+	public void setCartItem(List<CartItem> cartItem) {
 		this.cartItem = cartItem;
 	}
 

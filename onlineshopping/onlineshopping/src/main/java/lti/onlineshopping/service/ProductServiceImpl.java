@@ -35,12 +35,12 @@ public class ProductServiceImpl implements ProductServiceIntf {
 		return s;
 	}
 	
-	public List<Object[]> getUsers() {
+	public List<Object[]> getProducts() {
 		List<Object[]> list = productDao.getProducts();
 		return list;
 	}
 	
-	public List<Object[]> getmyUsers() {
+	public List<Object[]> getmyProducts() {
 		List<Object[]> list = new ProductDaoImpl().getProducts();
 		return list;
 	}

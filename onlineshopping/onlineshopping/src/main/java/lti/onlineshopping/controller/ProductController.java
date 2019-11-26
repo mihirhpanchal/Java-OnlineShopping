@@ -15,43 +15,65 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import lti.onlineshopping.model.Cart;
 import lti.onlineshopping.model.CartItem;
 import lti.onlineshopping.model.Category;
 import lti.onlineshopping.model.MyCart;
-import lti.onlineshopping.model.MyCartItem;
 import lti.onlineshopping.model.Order;
-import lti.onlineshopping.model.OrderBack;
-import lti.onlineshopping.model.OrderItemBack;
+import lti.onlineshopping.model.OrderItem;
 import lti.onlineshopping.model.Product;
 import lti.onlineshopping.model.SubCategory;
+import lti.onlineshopping.service.OrderServiceIntf;
 import lti.onlineshopping.service.ProductServiceIntf;
   
 @Controller("productController")
 public class ProductController {
 	@Autowired
 	ProductServiceIntf productService;
-		
+	@Autowired
+	OrderServiceIntf orderService;
 	@RequestMapping(value="/placeorder",method=RequestMethod.GET)
-	public ModelAndView palceorder(HttpServletRequest request,HttpServletResponse response)
+	public ModelAndView placeorder(HttpServletRequest request,HttpServletResponse response)
 	{
-	ModelAndView mav = new ModelAndView("ordersucessful");
-	
-	String product_name=request.getParameter("product_name");
-	Order myorder = new Order();
-	return mav;
+		HttpSession session = request.getSession();
+		MyCart mycart = (MyCart)session.getAttribute("mycart"); 
+		String username = session.getAttribute("username").toString();
+		System.out.println(username);
+		List<CartItem> clist = mycart.getCartItem();
+		Order myorder = new Order();
+		myorder.setUsername(username);
+		myorder.setOrderItem(new ArrayList<OrderItem>());
+		//String username = session.getAttribute("username").toString();
+		//myorder.setUsername(username);
+		 for (CartItem item : clist) {
+			 
+			int prodid = item.getProduct_id();
+			System.out.println(prodid);
+			 
+			OrderItem orderItem = new OrderItem();
+			orderItem.setProdid(item.getProduct_id());
+			orderItem.setQuantity(item.getQuantity());
+			orderItem.setPrice(item.getPrice());
+			myorder.getOrderItem().add(orderItem);
+		 }
+		System.out.println(myorder);
+		boolean flag = orderService.addOrder(myorder);
+		System.out.println(flag);
+		int myorderid = myorder.getOrderid();
+		ModelAndView mav = new ModelAndView("ordersucessful");
+		mav.addObject("myorderid",myorderid);
+		return mav;
 	}
 	
 	@RequestMapping(value = "/orderconfirm", method = RequestMethod.GET)
-	public ModelAndView orderconfirm(Cart cart, HttpServletRequest request) {
+	public ModelAndView orderconfirm(MyCart cart, HttpServletRequest request) {
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
-			List<MyCartItem> clist = mycart.getCartItem();
-			OrderBack myorder = new OrderBack();
-			myorder.setOrderItem(new ArrayList<OrderItemBack>());
-			 for (MyCartItem item : clist) {
-				OrderItemBack orderItem = new OrderItemBack();
-				orderItem.setProdid(item.getProdid());
+			List<CartItem> clist = mycart.getCartItem();
+			Order myorder = new Order();
+			myorder.setOrderItem(new ArrayList<OrderItem>());
+			 for (CartItem item : clist) {
+				OrderItem orderItem = new OrderItem();
+				orderItem.setProdid(item.getProduct_id());
 				orderItem.setQuantity(item.getQuantity());
 				orderItem.setPrice(item.getPrice());
 				myorder.getOrderItem().add(orderItem);
@@ -96,20 +118,21 @@ public class ProductController {
 	@RequestMapping(value = "/addtocart", method = RequestMethod.POST)
 	public ModelAndView addtocart(HttpServletRequest request) {
 		int prodid=Integer.parseInt(request.getParameter("prodid"));
-		System.out.println(prodid);
 		int quantity=Integer.parseInt(request.getParameter("qty"));
-		
+		String price = request.getParameter("unitprice");
+		System.out.println("price:"+price);
 		HttpSession session = request.getSession();
 		MyCart mycart = (MyCart)session.getAttribute("mycart");
 		if(mycart==null){
 			System.out.println("cart not created");
 			mycart = new MyCart();
-			mycart.setCartItem(new ArrayList<MyCartItem>());
+			mycart.setCartItem(new ArrayList<CartItem>());
 		}
 		System.out.println(mycart);
-		MyCartItem cartItem = new MyCartItem();
-		cartItem.setProdid(prodid);
+		CartItem cartItem = new CartItem();
+		cartItem.setProduct_id(prodid);
 		cartItem.setQuantity(quantity);
+		cartItem.setPrice(price);
 		mycart.getCartItem().add(cartItem);
 		session.setAttribute("mycart", mycart);
 		
@@ -173,7 +196,7 @@ public class ProductController {
 	@RequestMapping(value="/viewallprod", method=RequestMethod.GET)
 	public ModelAndView viewusers(HttpServletRequest request,HttpServletResponse response){
 		
-		List<Object[]> products = productService.getUsers();
+		List<Object[]> products = productService.getProducts();
 		System.out.println(products.size());
 		ModelAndView mav = new ModelAndView("viewallprod");
 		mav.addObject("products", products);

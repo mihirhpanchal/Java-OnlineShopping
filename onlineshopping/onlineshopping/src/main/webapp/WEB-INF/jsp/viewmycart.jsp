@@ -10,7 +10,7 @@
 <body>
 
 <c:forEach items="${mycart.cartItem}" var="cartItem">
-<c:out value="${cartItem.prodid}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br> 
+<c:out value="${cartItem.product_id}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br> 
 <hr>
 </c:forEach>
 

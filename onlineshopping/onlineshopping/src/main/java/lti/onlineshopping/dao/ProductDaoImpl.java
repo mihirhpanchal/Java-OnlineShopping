@@ -18,6 +18,7 @@ import lti.onlineshopping.model.SubCategory;
 public class ProductDaoImpl implements ProductDaoIntf{
 
 
+	
 	public List<Object[]> getProducts(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();

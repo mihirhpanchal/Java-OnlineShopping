@@ -16,7 +16,6 @@ public class User {
 	@Column(unique=true)
 	private String email;
 	private String cno;
-	private boolean enabled;
 	
 	public String getUsername() {
 		return username;
@@ -51,12 +50,6 @@ public class User {
 	}
 	public User() {
 		super();
-	}
-	public boolean isEnabled() {
-		return enabled;
-	}
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
 	}
 	
 }
