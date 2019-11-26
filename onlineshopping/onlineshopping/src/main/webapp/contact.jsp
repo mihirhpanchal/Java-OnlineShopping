@@ -12,6 +12,7 @@
      * {
         box-sizing: border-box;
         text-align: center;
+       
         
         font-family: Verdana, Geneva, Tahoma, sans-serif;
        }
@@ -62,18 +63,20 @@
         text-align: center;
         font-size: 15px;
       }
-      .card {
+      .cardc {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
 	background:#E5E5E5;
         width: 30%;
+        
         float:left;
         margin-left:3.5cm;
         margin-right:3.5cm;
         margin-bottom:1cm; 
+        margin-top:1.5cm;
         }
 
-        .card:hover {
+        .cardc:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         }
         #logo{
@@ -82,38 +85,41 @@
         margin-right:350px;
       }
 
-        .container {
+        .containerc {
         padding: 2px 8px;
         }
    </style>
 </head>
 <body>
  <%@ include file="shared/navbar.jsp"%> 
-<div class="card">
+ 
+<div class="cardc">
+
         <img src="" alt="Avatar" style="width:70%">
-        <div class="container">
+        <div class="containerc">
           <h4><b>Mihir Panchal</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
- <div class="card">
+
+ <div class="cardc">
         <img src="images/prajwal.jpg" alt="Avatar" style="width:70%">
-        <div class="container">
+        <div class="containerc">
           <h4><b>Prachi Sharma</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
  <div style="margin:2px"></div>
- <div class="card">
+ <div class="cardc">
         <img src="images/arpita.jpg" alt="Avatar" style="width:70%">
-        <div class="container">
+        <div class="containerc">
           <h4><b>Vaibhavi Chavan</b></h4> 
           <p>Developer</p> 
         </div>       
  </div>
- <div class="card">
+ <div class="cardc">
         <img src="images/nikhil.jpg" alt="Avatar" style="width:70%">
-        <div class="container">
+        <div class="containerc">
           <h4><b>Lavina Budhwani</b></h4> 
           <p>Developer</p> 
         </div>       

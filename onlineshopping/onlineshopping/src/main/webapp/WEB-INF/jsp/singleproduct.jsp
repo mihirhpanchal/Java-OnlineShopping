@@ -118,7 +118,8 @@ Product products = null;
 	<form action="addtocart.do" method="post">
 	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
 	Quatity:
-	<input type="number" name="qty" id="qty" required><br><br>
+	<input type="number" name="qty" min="0" step="1" id="qty" required
+	title="Please enter the quantity"><br><br>
 	<input type="submit" value="Add to cart">
 	</form>
 			</div>

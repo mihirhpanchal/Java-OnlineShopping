@@ -53,6 +53,21 @@ input:hover,
 .btn:hover {
   opacity: 1;
 }
+
+.footer-distributed1{
+	position:absolute;
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 0px 0px;
+	margin-top: -400px;
+}
+
+
 </style>
 </head>
 <body>
@@ -73,6 +88,6 @@ input:hover,
 
 </div>
 
- <div><%@ include file="../../shared/footer.jsp"%></div>
+ <div class="footer-distributed1"><%@ include file="../../shared/footer.jsp"%></div>
 </body>
 </html>

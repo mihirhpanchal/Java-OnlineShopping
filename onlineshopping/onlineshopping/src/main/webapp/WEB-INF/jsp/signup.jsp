@@ -50,6 +50,21 @@ input:hover,
 .btn:hover {
   opacity: 1;
 }
+
+
+.footer-distributedsu{
+	position:absolute;
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 0px 0px;
+	margin-top: -400px;
+}
+
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
@@ -83,6 +98,9 @@ input:hover,
 </span></div>
 
 </div>
- <div><%@ include file="../../shared/footer.jsp"%></div>
+ <div class="footer-distributedsu">
+ <%@ include file="../../shared/footer.jsp"%>
+ </div>
+
 </body>
 </html>
