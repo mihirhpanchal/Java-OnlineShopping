@@ -60,7 +60,9 @@ input:hover,
 <div class="container">
 
 <div class="col" style="position:absolute;top:150px;left:315px;width:50%;z-index:105">
-<form action="loginProcess.do">
+<form action="loginProcess.do" modelattribute="users" method=post>
+		<center><p style="font-style: italic; color: #263238;">${status}</p></center>
+		<center><p>${status1}</p></center>
         <input type="text" name="username" placeholder="Username" required> <br><br>
         <input type="password" name="password" placeholder="Password" required><br><br>
         <input type="submit" value="Login">
