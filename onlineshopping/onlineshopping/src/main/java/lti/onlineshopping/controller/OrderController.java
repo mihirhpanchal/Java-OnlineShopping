@@ -7,38 +7,61 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import lti.onlineshopping.model.Cart;
+
+import lti.onlineshopping.model.CartItem;
 import lti.onlineshopping.model.MyCart;
-import lti.onlineshopping.model.MyCartItem;
-import lti.onlineshopping.model.OrderBack;
-import lti.onlineshopping.model.OrderItemBack;
+import lti.onlineshopping.model.Order;
+import lti.onlineshopping.model.OrderItem;
+import lti.onlineshopping.service.OrderServiceIntf;
 
 	@Controller
 	@RequestMapping(value = "order")
 	public class OrderController {
-		
+	
+	@Autowired
+	OrderServiceIntf orderService;
+	
+	
 	@RequestMapping(value="/placeorder",method=RequestMethod.GET)
-	public ModelAndView palceorder(HttpServletRequest request,HttpServletResponse response)
+	public ModelAndView placeorder(HttpServletRequest request,HttpServletResponse response)
 	{
-	ModelAndView mav = new ModelAndView("ordersucessful");
-	return mav;
+		HttpSession session = request.getSession();
+		MyCart mycart = (MyCart)session.getAttribute("mycart"); 
+		List<CartItem> clist = mycart.getCartItem();
+		Order myorder = new Order();
+		myorder.setOrderItem((new ArrayList<OrderItem>()));
+		 for (CartItem item : clist) {
+			OrderItem orderItem = new OrderItem();
+			orderItem.setProdid(item.getProduct_id());
+			orderItem.setQuantity(item.getQuantity());
+			orderItem.setPrice(item.getPrice());
+			myorder.getOrderItem().add(orderItem);
+		 }
+		System.out.println(myorder);
+		boolean flag = orderService.addOrder(myorder);
+		System.out.println(flag);
+		int myorderid = myorder.getOrderid();
+		ModelAndView mav = new ModelAndView("ordersucessful");
+		mav.addObject("myorderid",myorderid);
+		return mav;
 	}
 	
 	@RequestMapping(value = "/orderconfirm", method = RequestMethod.GET)
-	public ModelAndView orderconfirm(Cart cart, HttpServletRequest request) {
+	public ModelAndView orderconfirm(MyCart cart, HttpServletRequest request) {
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
-			List<MyCartItem> clist = mycart.getCartItem();
-			OrderBack myorder = new OrderBack();
-			myorder.setOrderItem(new ArrayList<OrderItemBack>());
-			 for (MyCartItem item : clist) {
-				OrderItemBack orderItem = new OrderItemBack();
-				orderItem.setProdid(item.getProdid());
+			List<CartItem> clist = mycart.getCartItem();
+			Order myorder = new Order();
+			myorder.setOrderItem(new ArrayList<OrderItem>());
+			 for (CartItem item : clist) {
+				OrderItem orderItem = new OrderItem();
+				orderItem.setProdid(item.getProduct_id());
 				orderItem.setQuantity(item.getQuantity());
 				orderItem.setPrice(item.getPrice());
 				myorder.getOrderItem().add(orderItem);

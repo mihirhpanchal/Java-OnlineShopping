@@ -13,7 +13,14 @@ public interface ProductServiceIntf {
 	public Category getCategory(String categoryname);
 	
 	public SubCategory getSubCategory(String scategoryname);
+	public List<Object[]> getProducts();
 	
-	public List<Object[]> getUsers();
+	public List<Object[]> getmyProducts();
+	
 	public Product  fetchDetails(int prodid);
+	
+	public Product compareProduct(int prodid);
+	
+	public List<Product> searchKeywords(String search);
+	
 }

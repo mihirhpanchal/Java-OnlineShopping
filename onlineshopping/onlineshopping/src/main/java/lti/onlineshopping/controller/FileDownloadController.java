@@ -21,7 +21,7 @@ public class FileDownloadController {
     //, @PathVariable("fileName") String fileName) 
     {
 		String fileName=request.getParameter("fileName"); 
-        String dataDirectory = System.getProperty("catalina.home")+ File.separator + "tempfiles";
+        String dataDirectory = System.getProperty("catalina.home")+ File.separator + "tmpfiles";
         System.out.println(fileName+"  "+dataDirectory);
         Path file = Paths.get(dataDirectory, fileName);
         if (Files.exists(file)) 
@@ -44,7 +44,7 @@ public class FileDownloadController {
     {
 		String fileName=request.getParameter("fileName"); 
         //String dataDirectory = "c:\\tempfiles"; 
-		String dataDirectory =  System.getProperty("catalina.home")+ File.separator + "tempfiles"; 
+		String dataDirectory =  System.getProperty("catalina.home")+ File.separator + "tmpfiles"; 
         System.out.println("filename:"+fileName+"\nDir:"+dataDirectory);
         Path file = Paths.get(dataDirectory, fileName);
         if (Files.exists(file)) 

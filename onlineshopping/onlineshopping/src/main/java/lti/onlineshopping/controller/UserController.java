@@ -72,7 +72,7 @@ public class UserController {
 	    ModelAndView mav = null;
 	    User user = userService.validateUser(iuser);
 	    if (user != null) {
-	      mav = new ModelAndView("redirect:/indexPostLogin.jsp");
+	      mav = new ModelAndView("redirect:/index.jsp");
 	     /* mav.addObject("username", user.getUsername());*/
 	      //session manage
 	      HttpSession session= request.getSession();
