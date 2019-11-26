@@ -36,7 +36,7 @@ body, h1, h2, h3, h4, h5 {
 	font: normal 16px sans-serif;
 
 	padding: 0px 0px;
-	margin-top: -750px;
+	margin-top: -650px;
 }
 
 </style>

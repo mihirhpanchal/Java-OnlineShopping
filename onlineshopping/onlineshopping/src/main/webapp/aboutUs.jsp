@@ -24,24 +24,19 @@
 	<div class="row" style="margin-top:4px; margin-right:0px; margin-left:0px;margin-bottom:19px ">
 		<div class="col-sm-4" style="margin-top:0px">
 			<div class="container-fluid bg-1 text-center">
-				<h3>Who Am I?</h3>
-				<img src="<c:url value="/assests/images/aboutImage.png"/>" class="img-circle" alt="AboutUs" width="350"
-					height="350">
-				<h3>ShopIeasy a WorldWide E-Commerce Site</h3>
+				
+				
+				<h3>VPShop.ML a WorldWide E-Commerce Site</h3>
 			</div>
 
 		</div>
 
 		<div class="container-fluid bg-2 text-center">
-			<h3>What Am I?</h3>
-			<div id="para"><p>ShopIeasy's vision is to create India's most reliable and
-				frictionless commerce ecosystem that creates life-changing
-				experiences for buyers and sellers.</p>
+			
+			<div id="para"><p>We have developed this Online Shopping Website for easy Buying...</p>
+	
 			</div>
-			<div id="para"><p>We have always taken pride in our culture. There are some core
-				values that have been inherent and are an integral part of our
-				success story. These values are a pure reflection of what is
-				important to us as a Team and Business..</p>
+			<div id="para"><p>We are trying to provide the Best Service in our Website.. Customers are our First Priority...!!!</p>
 		</div></div>
 	</div>
 	

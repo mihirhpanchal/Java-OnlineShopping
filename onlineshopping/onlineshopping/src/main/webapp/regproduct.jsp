@@ -8,24 +8,20 @@
 <meta charset="ISO-8859-1">
 <title>Product Registration</title>
 <style>
-.container{
+.containerrp{
 position:absolute;
-<<<<<<< HEAD
-top:22%;
-left:24%;
+
+top:32%;
+left:28%;
 width:55%;
-height:146%;
-=======
-top:20%;
-left:18%;
-width:55%;
-height:149%;
->>>>>>> a2e61d2c5c5b386acd174c6ce0eee919d4798381
+height:143%;
+
+
 
 font-family:arial;
 z-index:100;
 background-color:#F1F1F1;
-
+}
 .col-25 {
   float: left;
   width: 25%;
@@ -36,22 +32,6 @@ background-color:#F1F1F1;
   float: left;
   width: 75%;
   margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
 }
 
 .product{
@@ -68,8 +48,6 @@ font-weight:bold;
 line-height:35px;
 
 }
-
-
 
 input[type=submit] {
   background-color: #4CAF50;
@@ -119,6 +97,27 @@ input[type=number], select, textarea{
 }
 
 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+}
+
+
+
+
+
+
 
 </style>
 </head>
@@ -126,7 +125,7 @@ input[type=number], select, textarea{
  <header><%@ include file="shared/navbar.jsp"%></header> 
 
 
-<div class="container">
+<div class="containerrp">
 
 <div class="product">Add New Product<br> </div>
 

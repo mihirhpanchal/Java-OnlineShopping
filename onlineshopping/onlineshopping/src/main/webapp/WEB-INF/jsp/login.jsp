@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 <style>
-.container1{
+.containerlog{
 position:absolute;
-top:22%;
+top:32%;
 left:28%;
 width:52%;
 height:75%;
@@ -72,7 +72,7 @@ input:hover,
 </head>
 <body>
  <header><%@ include file="../../shared/navbar.jsp"%></header> 
-<div class="container1">
+<div class="containerlog">
 
 <div class="col" style="position:absolute;top:150px;left:315px;width:50%;z-index:105">
 <form action="loginProcess.do" modelattribute="users" method=post>
