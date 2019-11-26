@@ -153,7 +153,7 @@ public class ProductController {
 		return mav;
 	}
 	
-	 @RequestMapping(value = "/insertprod.do", method = RequestMethod.GET)
+	 @RequestMapping(value = "/insertproduct.do", method = RequestMethod.GET)
 	  public ModelAndView showRegister2(HttpServletRequest request, HttpServletResponse response) {
 	    ModelAndView mav = new ModelAndView("regproduct");
 	    mav.addObject("product", new Product());
@@ -311,6 +311,16 @@ public class ProductController {
 		}
 
 	}
+	
+	@RequestMapping(value = "/removeproduct", method = RequestMethod.GET)
+	public ModelAndView removeProduct( HttpServletRequest request,HttpServletResponse response){
+		
+		int prodid=Integer.parseInt(request.getParameter("prodid"));
+		boolean flag = productService.removeProduct(prodid);
+		ModelAndView mav = new ModelAndView("deletedproduct");
+		mav.addObject("text","Product successfully deleted");
+		 return mav;
+		}
 	
 }
 	

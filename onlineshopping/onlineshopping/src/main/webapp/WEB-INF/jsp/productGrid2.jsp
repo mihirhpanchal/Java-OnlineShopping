@@ -1,6 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="lti.onlineshopping.service.ProductServiceImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- <%@ taglib prefix="security" --%>
 <%-- 	uri="http://www.springframework.org/security/tags"%> --%>
 <%@ page isELIgnored="false"%>
@@ -26,27 +28,39 @@ body, h1, h2, h3, h4, h5 {
 </style>
 </head>
 <body>
-	<hr>
-	<div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
+<%
+List<Object[]> products = new ProductServiceImpl().getmyProducts();
+System.out.println(products.size());
+%>
+	<hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
+	<%-- <c:forEach items="${products}" var="product"> --%>
+	 <%
+	    for( Object[] product :products){
+	    	String url = "singleproduct.do?prodid="+product[0];
+	    	String url1 = "removeproduct.do?prodid="+product[0];
+	    
+	 %>
 		<div class="w3-third w3-container w3-margin-bottom">
-			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
-				class="w3-hover-opacity">
+			<img src="<c:url value="/assets/images/products/two.jpg"/>" alt="Product" style="width: 100%" class="w3-hover-opacity">
 			<div class="w3-container w3-white">
 				<p>
-					<b>Oppo A37</b>
+					<b><h3><%=product[1]%></h3></b>
 				</p>
 				<p>
 					<ul>
-						<li>Technology - GSM/HSPA/LTE</li>
-						<li>Resolution - 720x1280 pixels</li>
-						<li>OS - Android OS, v5.1(Lollipop)</li>
-						<li>Price - 10,000.00</li>
+						<li><%=product[4]%></li>
+						<li><h5>Price - <%=product[2]%></h5></li>
+						<button><a href="<%=url%>">View Product</a></button><br><br>
+						<button><a href="<%=url1%>">Remove Product</a></button>
 					</ul>
 				</p>
 			</div>
 		</div>
-		
-		<div class="w3-third w3-container w3-margin-bottom">
+	<%
+	}
+	%>
+	</div>	
+	<%-- 	<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/seven.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity">
 			<div class="w3-container w3-white">
@@ -80,10 +94,10 @@ body, h1, h2, h3, h4, h5 {
 				</p>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 	
 		<hr>
-	<div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
+	<%-- <div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 		<div class="w3-third w3-container w3-margin-bottom">
 			<img src="<c:url value="/assets/images/products/five.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity">
@@ -137,6 +151,6 @@ body, h1, h2, h3, h4, h5 {
 				
 			</div>
 		</div>
-	</div>
+	</div> --%>
 </body>
 </html>

@@ -36,7 +36,4 @@ public class RetailerDaoImpl implements RetailerDaoIntf{
 		  return flag;
 	
 	}
-	}
-	
-
-
+}

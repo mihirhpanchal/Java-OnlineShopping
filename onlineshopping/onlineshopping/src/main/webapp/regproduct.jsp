@@ -10,10 +10,17 @@
 <style>
 .container{
 position:absolute;
+<<<<<<< HEAD
+top:22%;
+left:24%;
+width:55%;
+height:146%;
+=======
 top:20%;
 left:18%;
 width:55%;
 height:149%;
+>>>>>>> a2e61d2c5c5b386acd174c6ce0eee919d4798381
 
 font-family:arial;
 z-index:100;
@@ -116,7 +123,7 @@ input[type=number], select, textarea{
 </style>
 </head>
 <body>
- <header><%@ include file="shared/navbar.jsp"%></header> 
+ <header><%@ include file="shared/retailernavbar.jsp"%></header> 
 
 
 <div class="container">
@@ -126,7 +133,7 @@ input[type=number], select, textarea{
 
 <div class="col" style="position:absolute;top:65px;left:175px;width:50%;z-index:105">
 
-<form action= "insertproduct.do" method= "post"  id= "register" modelAttribute= "product" action= "insertproduct.do" method= "post" enctype= "multipart/form-data">
+<form action= "insertproduct.do" method= "post"  id= "register" modelAttribute= "product" enctype= "multipart/form-data">
 
 	
 <!--   <form action="insertproduct.do" method="post"> -->
