@@ -63,4 +63,8 @@ public class ProductServiceImpl implements ProductServiceIntf {
 		return  productDao.searchKeywords(search);
 	}
 
+	public boolean removeProduct(int id){
+		return productDao.removeProduct(id);
+	}
+	
 }

@@ -86,7 +86,8 @@
 				
 				<!-- 			Only admin can view this link -->
 <!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
-				<li><a href=" <c:url value="regproduct.jsp" />">Add Product</a></li>
+				<%-- <li><a href=" <c:url value="regproduct.jsp" />">Add Product</a></li> --%>
+				 	<%-- <li><a href=" <c:url value="retailer.jsp" />">Sell Products</a></li>  --%>
 				<li><div class="search-container">
     <form action="search.do">
       <input type="text" name="search" placeholder="Search..">
