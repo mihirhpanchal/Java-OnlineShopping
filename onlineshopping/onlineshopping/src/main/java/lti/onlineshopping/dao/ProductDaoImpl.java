@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,7 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();
 		String sql=null;
-		sql="SELECT p.product_id,p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name FROM Product p , Category c , SubCategory s  where  p.category_id=c.category_id and p.sub_id=s.sub_id";
+		sql="SELECT p.product_id,p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name,p.filename FROM Product p , Category c , SubCategory s  where  p.category_id=c.category_id and p.sub_id=s.sub_id";
 		@SuppressWarnings("unchecked")
 		List<Object[]> products = em.createNativeQuery(sql).getResultList();
 		//.createQuery(sql).getResultList();
@@ -114,8 +115,37 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		
 		return product;
 		}
-
 	
+		public Product compareProduct(int prodid) {
+		
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+			EntityManager em = emf.createEntityManager();
+			System.out.println("compare product dao called");
+			System.out.println("Product id:"+prodid);
+		
+			Query query = em.createQuery("SELECT p FROM Product p where p.product_id=:prodid");
+			query.setParameter("prodid", prodid);
+			Product products = (Product) query.getSingleResult();
+			return products;
+		
+		}
 	
-
+		@SuppressWarnings("unchecked")
+		public List<Product> searchKeywords(String search){
+		
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+			EntityManager em = emf.createEntityManager();
+			
+			System.out.println("search:"+search);
+			Query query = em.createQuery("SELECT p FROM Product p  WHERE (0 < LOCATE(:searchStr,  p.product_name||p.product_description||p.brand))");
+			query.setParameter("searchStr", search);
+			List<Product> searchList = query.getResultList();
+			return searchList;
+		
+		/*String sql="SELECT p.product_description FROM Product p where p.product_description LIKE '%:search%'";
+		@SuppressWarnings("unchecked")
+		List<Object[]> searchList = em.createNativeQuery(sql).getResultList();
+		return searchList;*/
+		
+	}
 }

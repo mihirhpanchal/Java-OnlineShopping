@@ -91,7 +91,7 @@
    </style>
 </head>
 <body>
- <%@ include file="shared/navbar.jsp"%> 
+<div><%@ include file="/shared/navbar.jsp"%></div>
  
 <div class="cardc">
 
