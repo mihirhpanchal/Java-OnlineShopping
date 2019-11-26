@@ -23,7 +23,7 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();
 		String sql=null;
-		sql="SELECT p.product_id,p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name FROM Product p , Category c , SubCategory s  where  p.category_id=c.category_id and p.sub_id=s.sub_id";
+		sql="SELECT p.product_id,p.product_name,p.unit_price,p.product_description,p.brand,c.category_name,s.sub_name,p.filename FROM Product p , Category c , SubCategory s  where  p.category_id=c.category_id and p.sub_id=s.sub_id";
 		@SuppressWarnings("unchecked")
 		List<Object[]> products = em.createNativeQuery(sql).getResultList();
 		//.createQuery(sql).getResultList();

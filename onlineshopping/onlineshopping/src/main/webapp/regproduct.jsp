@@ -1,3 +1,5 @@
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE tml PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,12 +8,12 @@
 <meta charset="ISO-8859-1">
 <title>Product Registration</title>
 <style>
-.containerregp{
+.container{
 position:absolute;
-top:18%;
+top:20%;
 left:18%;
 width:55%;
-height:145%;
+height:149%;
 
 font-family:arial;
 z-index:100;
@@ -117,16 +119,17 @@ input[type=number], select, textarea{
  <header><%@ include file="shared/navbar.jsp"%></header> 
 
 
-<div class="containerregp">
+<div class="container">
 
 <div class="product">Add New Product<br> </div>
 
 
 <div class="col" style="position:absolute;top:65px;left:175px;width:50%;z-index:105">
 
+<form action= "insertproduct.do" method= "post"  id= "register" modelAttribute= "product" action= "insertproduct.do" method= "post" enctype= "multipart/form-data">
 
 	
-  <form action="insertproduct.do" method="post">
+<!--   <form action="insertproduct.do" method="post"> -->
 	<div class="row">
       <div class="col-25">
  	<label >Product Name: </label>
@@ -185,6 +188,17 @@ input[type=number], select, textarea{
 	</div>
 	</div>
     <br><br>
+
+<div class="row">
+      <div class="col-25">
+    <label ><b>Upload Product Image&nbsp; :</b> </label>
+	</div>
+	<div class="col-75">
+    <input type="file" name="file" id="product_nmae">
+	</div>
+	</div>
+    <br><br>    
+    
 
 	<div class="row">
       <div class="col-25">

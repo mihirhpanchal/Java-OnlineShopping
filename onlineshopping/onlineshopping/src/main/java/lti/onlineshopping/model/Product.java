@@ -42,6 +42,16 @@ public class Product {
 		this.product_id = product_id;
 	}
 
+
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
 	public String getProduct_name() {
 		return product_name;
 	}
@@ -103,6 +113,21 @@ public class Product {
 	}
 
 	public void setDate_added(Date date_added) {
+		this.date_added = date_added;
+	}
+	
+	public Product(int product_id, String product_name, String brand, String product_description, String unit_price,
+			String quantity, String filename, Category category, SubCategory subcategory, Date date_added) {
+		super();
+		this.product_id = product_id;
+		this.product_name = product_name;
+		this.brand = brand;
+		this.product_description = product_description;
+		this.unit_price = unit_price;
+		this.quantity = quantity;
+		this.filename = filename;
+		this.category = category;
+		this.subcategory = subcategory;
 		this.date_added = date_added;
 	}
 
