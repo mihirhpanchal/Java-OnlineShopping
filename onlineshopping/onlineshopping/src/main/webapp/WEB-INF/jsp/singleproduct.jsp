@@ -65,7 +65,7 @@
 	font: normal 16px sans-serif;
 
 	padding: 0px -10px;
-	margin-top: -960px;
+	margin-top: -650px;
 }
 
 /* Responsive columns */
@@ -132,13 +132,13 @@ Product products = null;
 	Brand: <c:out value="${products.brand}"/><br><br>
 	<form action="addtocart.do" method="post">
 	<input type="hidden" name="prodid" id="prodid" value="${prodid}"/>
-<<<<<<< HEAD
+
 	<label>Quantity:</label>
-=======
+
 	<input type="hidden" name="pname" id="pname" value="${products.product_name }"/>
 	<input type="hidden" name="unitprice" id="unitprice" value="${products.unit_price }"/>
-	Quatity:
->>>>>>> a2e61d2c5c5b386acd174c6ce0eee919d4798381
+	
+
 	<input type="number" name="qty" min="0" step="1" id="qty" required
 	title="Please enter the quantity"><br><br>
 	<input type="submit" value="Add to cart">
