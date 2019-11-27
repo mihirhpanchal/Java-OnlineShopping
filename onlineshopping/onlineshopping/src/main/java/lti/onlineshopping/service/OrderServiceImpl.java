@@ -12,7 +12,6 @@ public class OrderServiceImpl implements OrderServiceIntf {
 	OrderDaoIntf orderDao;
 	
 	public boolean addOrder(Order order) {
-		System.out.println("Service is called");
 		boolean flag=orderDao.addOrder(order);
 		
 		return flag;

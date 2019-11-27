@@ -43,7 +43,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">  -->
 	<property name="jpaVendorAdapter">
 	   <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 	   <!-- <property name="generateDdl" value="true" /> -->
-	   <property name="showSql" value="true" />
+	   <!-- <property name="showSql" value="true" /> -->
     </bean>
  	</property>
 </bean>

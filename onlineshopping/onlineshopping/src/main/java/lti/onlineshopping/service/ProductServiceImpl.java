@@ -22,20 +22,17 @@ public class ProductServiceImpl implements ProductServiceIntf {
 	ProductDaoIntf productDao;
 	
 	public boolean insertProduct(Product product) {
-		System.out.println("Service is called");
 		boolean flag=productDao.insertProduct(product);
 		
 		return flag;
 	}
 
 	public Category getCategory(String categoryname){
-		System.out.println("Category service is called");
 		Category c =productDao.getCategory(categoryname);
 		return c;
 	}
 
 	public SubCategory getSubCategory(String scategoryname) {
-		System.out.println("Category service is called");
 		SubCategory s =productDao.getSubCategory(scategoryname);
 		return s;
 	}
@@ -60,7 +57,6 @@ public class ProductServiceImpl implements ProductServiceIntf {
 	}
 	
 	public List<Product> searchKeywords(String search){
-		System.out.println("Search service called");
 		return  productDao.searchKeywords(search);
 	}
 	public boolean makePayment(Order order){

@@ -11,7 +11,6 @@ import lti.onlineshopping.model.Order;
 public class OrderDaoImpl implements OrderDaoIntf {
 
 	public boolean addOrder(Order order) {
-		System.out.println("Order Dao called");
 		boolean result = false;
 		EntityManagerFactory emf = null;
 		EntityManager em = null;

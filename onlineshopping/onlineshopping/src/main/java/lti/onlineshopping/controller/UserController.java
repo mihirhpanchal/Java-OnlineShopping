@@ -68,8 +68,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/loginProcess", method= RequestMethod.POST)
 	  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,   @ModelAttribute("users") User iuser) {
-		System.out.println("Controller called");
-	    ModelAndView mav = null;
+		ModelAndView mav = null;
 	    User user = userService.validateUser(iuser);
 	    if (user != null) {
 	      mav = new ModelAndView("redirect:/index.jsp");
@@ -88,7 +87,6 @@ public class UserController {
 	
 	@RequestMapping(value = "/logoutProcess", method= RequestMethod.GET)
 	  public ModelAndView logoutProcess(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-		System.out.println(session.getAttribute("username"));
 		HttpSession session1 =request.getSession(false);
 		session1.invalidate();
 		ModelAndView mav = new ModelAndView("redirect:/index.jsp");

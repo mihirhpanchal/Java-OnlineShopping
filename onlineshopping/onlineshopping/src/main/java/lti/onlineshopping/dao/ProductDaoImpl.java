@@ -35,7 +35,6 @@ public class ProductDaoImpl implements ProductDaoIntf{
 	}
 
 	public boolean insertProduct(Product product) {
-		System.out.println("Dao called");
 		boolean result = false;
 		
 		EntityManagerFactory emf = null;
@@ -59,7 +58,6 @@ public class ProductDaoImpl implements ProductDaoIntf{
 	}
 
 	public Category getCategory(String categoryname) {
-		System.out.println("Category Dao called");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();
 		Query query = em.createQuery("select  c from Category c where c.category_name=:cata");
@@ -82,7 +80,6 @@ public class ProductDaoImpl implements ProductDaoIntf{
 	}
 
 	public SubCategory getSubCategory(String scategoryname) {
-		System.out.println("SubCategory Dao called");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();
 		Query query = em.createQuery("select s from SubCategory s where s.sub_name=:scata");
@@ -107,8 +104,6 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em = emf.createEntityManager();
 		Query query = em.createQuery("select p from Product p where p.product_id=:prodid");
-		//Integer idint = Integer.parseInt(prodid);
-		System.out.println("prodid:"+prodid);
 		query.setParameter("prodid", prodid);
 		
 		Product	product =(Product)query.getSingleResult();
@@ -121,8 +116,6 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 			EntityManager em = emf.createEntityManager();
-			System.out.println("compare product dao called");
-			System.out.println("Product id:"+prodid);
 		
 			Query query = em.createQuery("SELECT p FROM Product p where p.product_id=:prodid");
 			query.setParameter("prodid", prodid);
@@ -136,17 +129,10 @@ public class ProductDaoImpl implements ProductDaoIntf{
 		
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 			EntityManager em = emf.createEntityManager();
-			
-			System.out.println("search:"+search);
 			Query query = em.createQuery("SELECT p FROM Product p  WHERE (0 < LOCATE(:searchStr,  p.product_name||p.product_description||p.brand))");
 			query.setParameter("searchStr", search);
 			List<Product> searchList = query.getResultList();
 			return searchList;
-		
-		/*String sql="SELECT p.product_description FROM Product p where p.product_description LIKE '%:search%'";
-		@SuppressWarnings("unchecked")
-		List<Object[]> searchList = em.createNativeQuery(sql).getResultList();
-		return searchList;*/
 		}
 		
 
@@ -156,13 +142,10 @@ public class ProductDaoImpl implements ProductDaoIntf{
 				EntityManager em1 = emf1.createEntityManager();
 				
 				try{
-					
-					System.out.println(order);
 					em1.getTransaction().begin();
 					em1.persist(order);
 					em1.getTransaction().commit();
 					em1.close();
-					System.out.println("end");
 					flag = true;
 					
 				}
@@ -180,12 +163,10 @@ public class ProductDaoImpl implements ProductDaoIntf{
 			EntityManager em = emf.createEntityManager();
 			
 			boolean flag=false;
-			System.out.println("Id: "+id);
 			em.getTransaction().begin();
 			Query query = em.createQuery("DELETE FROM Product p WHERE p.product_id = :pid ");
 			query.setParameter("pid", id);
 			int rowsDeleted = query.executeUpdate();
-			System.out.println("Deleted rows: "+rowsDeleted);
 			em.getTransaction().commit();
 			em.close();
 			emf.close();

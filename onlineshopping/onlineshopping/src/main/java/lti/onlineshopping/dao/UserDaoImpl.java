@@ -21,7 +21,6 @@ public class UserDaoImpl implements UserDaoIntf{
 		boolean res = false;
 		
 		try{
-			System.out.println("Dao called");
 			em.persist(user);
 			res = true;
 		}
@@ -41,7 +40,6 @@ public class UserDaoImpl implements UserDaoIntf{
 		         .getSingleResult();
 		}
 		catch(Exception e) {System.out.println(e); }
-		System.out.println(f);
 		return f;
 	  }
 

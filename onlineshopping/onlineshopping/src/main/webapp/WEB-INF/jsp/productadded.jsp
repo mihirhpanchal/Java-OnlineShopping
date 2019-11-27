@@ -4,16 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Product Added</title>
 </head>
 <body>
+ <header><%@ include file="../../shared/retailernavbar.jsp"%></header> 
 <h1> ${product_name}</h1>
 <b> added</b>
 <br>
 <b> ${unit_price}</b>
 <br>
-Cid : ${cid}
-<br>
 Status: ${status} 
+
+ <div class="footer-distributed1"><%@ include file="../../shared/footer.jsp"%></div>
 </body>
 </html>
