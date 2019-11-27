@@ -76,13 +76,16 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href=" <c:url value="/" />">Home</a></li>
-				<li><a href=" <c:url value="viewallprod.do" />">Product
+				<li><a href=" <c:url value="/viewallprod.do" />">Product
 						List</a></li>
 				
 				
 				<!-- 			Only admin can view this link -->
 <!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
-				<li><a href=" <c:url value="regproduct.jsp" />">Add Product</a></li>
+				<li><a href=" <c:url value="/addretailers.jsp" />">Add Retailer
+						</a></li>
+						<li><a href=" <c:url value="/viewretailers.do" />">View Retailer
+						</a></li>
 				
 				<li><div class="search-container">
     <form action="search.do">
@@ -90,6 +93,9 @@
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div></li>	
+  
+  <li><font style="color: white; font-size: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello, Admin</font></li>
+  
 				
 <!-- 				</security:authorize> -->
 			</ul>
@@ -109,7 +115,7 @@
 			</ul>
 
 
-			<ul class="nav navbar-nav navbar-right">
+		<%-- 	<ul class="nav navbar-nav navbar-right">
 
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
 					<li><a href="<c:url value="/viewmycart.do" />"><span
@@ -118,7 +124,7 @@
 					<li><a href="<c:url value="/loginProcess.do" />"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</c:if>
-			</ul>
+			</ul> --%>
 		</div>
 	</div>
 	</nav>

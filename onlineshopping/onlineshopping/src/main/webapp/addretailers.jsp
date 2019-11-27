@@ -75,7 +75,7 @@ input:hover,
 </head>
 <body>
 
- <header><%@ include file="shared/navbar.jsp"%></header> 
+ <header><%@ include file="shared/admin-navbar.jsp"%></header> 
 
 <div class="container">
 
