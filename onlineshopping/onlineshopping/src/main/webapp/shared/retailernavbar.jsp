@@ -76,7 +76,7 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href=" <c:url value="/" />">Home</a></li>
-				<li><a href=" <c:url value="viewallprod.do" />">Product List</a></li>
+				<li><a href=" <c:url value="/productGrid2.do" />">Product List</a></li>
 				<li><a href=" <c:url value="/aboutUs.jsp" />">About Us</a></li>
 				
 <!-- 				<security:authorize access="hasRole('ROLE_USER')"> -->

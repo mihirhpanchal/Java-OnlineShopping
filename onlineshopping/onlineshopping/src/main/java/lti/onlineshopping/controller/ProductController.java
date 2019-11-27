@@ -43,30 +43,23 @@ public class ProductController {
 		HttpSession session = request.getSession();
 		MyCart mycart = (MyCart)session.getAttribute("mycart"); 
 		String total=request.getParameter("total");
-		System.out.println("total "+total);
 		String username = session.getAttribute("username").toString();
-		System.out.println(username);
 		List<CartItem> clist = mycart.getCartItem();
 		Order myorder = new Order();
+		Calendar cal = Calendar.getInstance();
+	    Date date=cal.getTime();
 		myorder.setUsername(username);
 		myorder.setTotal(total);
+		myorder.setDate_added(date);
 		myorder.setOrderItem(new ArrayList<OrderItem>());
-		//String username = session.getAttribute("username").toString();
-		//myorder.setUsername(username);
 		 for (CartItem item : clist) {
-			 
-			int prodid = item.getProduct_id();
-			System.out.println(prodid);
-			 
 			OrderItem orderItem = new OrderItem();
 			orderItem.setProdid(item.getProduct_id());
 			orderItem.setQuantity(item.getQuantity());
 			orderItem.setPrice(item.getPrice());
 			myorder.getOrderItem().add(orderItem);
 		 }
-		System.out.println(myorder);
 		boolean flag = orderService.addOrder(myorder);
-		System.out.println(flag);
 		int myorderid = myorder.getOrderid();
 		ModelAndView mav = new ModelAndView("ordersucessful");
 		mav.addObject("myorderid",myorderid);
@@ -78,7 +71,6 @@ public class ProductController {
 			HttpSession session = request.getSession();
 			MyCart mycart = (MyCart)session.getAttribute("mycart"); 
 			String total=request.getParameter("total");
-			System.out.println("total "+total);
 			List<CartItem> clist = mycart.getCartItem();
 			Order myorder = new Order();
 			myorder.setOrderItem(new ArrayList<OrderItem>());
@@ -89,7 +81,6 @@ public class ProductController {
 				orderItem.setPrice(item.getPrice());
 				myorder.getOrderItem().add(orderItem);
 			 }
-			System.out.println(myorder);
 			myorder.setTotal(total);
 			ModelAndView mav = new ModelAndView("orderconfirm");
 			mav.addObject("myorder",myorder);
@@ -104,15 +95,6 @@ public class ProductController {
 	ModelAndView mav = new ModelAndView("viewallprod");
 	return mav;
 	}
-/*	
-	@RequestMapping(value = "/singleproduct", method = RequestMethod.GET)
-	public ModelAndView index(HttpServletRequest request) {
-		int prodid=Integer.parseInt(request.getParameter("prodid"));
-		ModelAndView mav = new ModelAndView("singleproduct");
-		mav.addObject("prodid",prodid);
-		return mav;
-	}
-*/
 	
 	@RequestMapping(value = "/viewmycart", method = RequestMethod.GET)
 	public ModelAndView viewmycart(HttpServletRequest request) {
@@ -125,31 +107,23 @@ public class ProductController {
 	}
 	
 	
-	
-	//addtocart.do
-	
 	@RequestMapping(value = "/addtocart", method = RequestMethod.POST)
 	public ModelAndView addtocart(HttpServletRequest request) {
 		int prodid=Integer.parseInt(request.getParameter("prodid"));
 		int quantity=Integer.parseInt(request.getParameter("qty"));
 		String price = request.getParameter("unitprice");
-		System.out.println("price:"+price);
 		HttpSession session = request.getSession();
 		MyCart mycart = (MyCart)session.getAttribute("mycart");
 		if(mycart==null){
-			System.out.println("cart not created");
 			mycart = new MyCart();
 			mycart.setCartItem(new ArrayList<CartItem>());
 		}
-		System.out.println(mycart);
 		CartItem cartItem = new CartItem();
 		cartItem.setProduct_id(prodid);
 		cartItem.setQuantity(quantity);
 		cartItem.setPrice(price);
 		mycart.getCartItem().add(cartItem);
 		session.setAttribute("mycart", mycart);
-		
-		System.out.println(mycart);
 		ModelAndView mav = new ModelAndView("viewallprod");
 		return mav;
 	}
@@ -181,7 +155,6 @@ public class ProductController {
 		
 		Calendar cal = Calendar.getInstance();
 	    Date date=cal.getTime();
-		System.out.println(date);
 		
 		
 		Product product=new Product();
@@ -201,11 +174,7 @@ public class ProductController {
 		for (int i = 0; i < files.length; i++) {
 		/*String*/ filename="";
 		if(i==0)
-			/*filename=(product_name+i)+".pdf";
-			else if(i==1)
-				filename=(product_name+i)+".pdf";
-			else if(i==2)
-*/					filename=(product_name+i)+".jpg";
+						filename=(product_name+i)+".jpg";
 		MultipartFile file = files[i];
 		try {
 			byte[] bytes = file.getBytes();
@@ -224,13 +193,7 @@ public class ProductController {
 			
 			if(i==0)
            product.setFilename(filename);
-			/*else if(i==1)
-				user.setDob_fname(filename;)
-			else if(i==2)
-				user.setImage(filename);
-			user.setStatus("N");*/
 			
-			System.out.println("Server File Location="+ serverFile.getAbsolutePath());
 			} catch (Exception e) {
 			System.out.println( "You failed to upload " + (product_name+i) + " => " + e.getMessage());
 		}
@@ -261,7 +224,6 @@ public class ProductController {
 	public ModelAndView viewusers(HttpServletRequest request,HttpServletResponse response){
 		
 		List<Object[]> products = productService.getProducts();
-		System.out.println(products.size());
 		ModelAndView mav = new ModelAndView("viewallprod");
 		mav.addObject("products", products);
 		return mav;
@@ -296,11 +258,8 @@ public class ProductController {
 		
 		String search = request.getParameter("search");
 		
-		System.out.println(search);
-		
 		List<Product> searchList = productService.searchKeywords(search);
 		if(searchList.size()!=0){
-			System.out.println( searchList.size());
 			ModelAndView mav = new ModelAndView("viewsearchresults");
 			mav.addObject("searchList", searchList);
 			return mav;
@@ -333,10 +292,6 @@ public class ProductController {
 		payment.setExpirydate(expirydate);
 		payment.setOrder_id(order_id);
 		payment.setPayment_id(payment_id);
-		
-		
-		
-		
 		private String payment_id;
 		private String order_id;
 
@@ -348,8 +303,6 @@ public class ProductController {
 		
 	}*/
 	
-
-
 	@RequestMapping(value = "/removeproduct", method = RequestMethod.GET)
 	public ModelAndView removeProduct( HttpServletRequest request,HttpServletResponse response){
 		

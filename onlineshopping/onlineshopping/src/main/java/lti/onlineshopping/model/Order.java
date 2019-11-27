@@ -30,6 +30,15 @@ public class Order {
 	@Temporal(TemporalType.DATE)
 	private Date date_added;
 
+	
+	public Date getDate_added() {
+		return date_added;
+	}
+
+	public void setDate_added(Date date_added) {
+		this.date_added = date_added;
+	}
+
 	public int getOrderid() {
 		return orderid;
 	}

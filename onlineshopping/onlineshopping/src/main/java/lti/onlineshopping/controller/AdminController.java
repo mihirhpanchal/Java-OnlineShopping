@@ -38,7 +38,6 @@ public class AdminController {
 		return mav;*/
 		String retailerid= request.getParameter("id");
 		boolean flag = retailerService.removeRetailer(retailerid);
-		System.out.println("god");
 		ModelAndView mav = new ModelAndView("deletedretailers");
 		mav.addObject("flag",flag);
 		 return mav;
