@@ -65,7 +65,7 @@
 	font: normal 16px sans-serif;
 
 	padding: 0px -10px;
-	margin-top: -650px;
+	margin-top: -950px;
 }
 
 /* Responsive columns */
@@ -189,8 +189,8 @@ Product products = null;
 				
 =
 		<div class="img-magnifier-container">
-			<img id="myimage" src="<c:url value="/assets/images/products/two.jpg"/>" alt="Norway" style="width: 100%" >
-
+<img src="http://localhost:8084/onlineshopping/download/image.do?fileName=${products.filename}" height="410" width="320"><br>
+	  
 			<div class="w3-container w3-white">
 		</div>
 			
@@ -206,7 +206,6 @@ Product products = null;
 	  String urls="http://localhost:8084/onlineshopping/download/image.do?fileName=${products.filename}";
 	   System.out.println("url:"+urls);
 	  %>
-	  <img src="http://localhost:8084/onlineshopping/download/image.do?fileName=${products.filename}" height="100" width="100"><br>
 	  
 	  
 	<h2>Product Name: <c:out value="${products.product_name }"/></h2>
