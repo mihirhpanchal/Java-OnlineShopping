@@ -84,6 +84,8 @@
 <!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
 				<li><a href=" <c:url value="/addretailers.jsp" />">Add Retailer
 						</a></li>
+						<li><a href=" <c:url value="/viewretailers.do" />">View Retailer
+						</a></li>
 				
 				<li><div class="search-container">
     <form action="search.do">
