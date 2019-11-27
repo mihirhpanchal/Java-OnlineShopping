@@ -78,10 +78,6 @@
 				<li><a href=" <c:url value="/" />">Home</a></li>
 				<li><a href=" <c:url value="/viewallprod.do" />">Product
 						List</a></li>
-				
-				
-				<!-- 			Only admin can view this link -->
-<!-- 				<security:authorize access="hasRole('ROLE_ADMIN')"> -->
 				<li><a href=" <c:url value="/addretailers.jsp" />">Add Retailer
 						</a></li>
 						<li><a href=" <c:url value="/viewretailers.do" />">View Retailer
@@ -96,8 +92,6 @@
   
   <li><font style="color: white; font-size: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello, Admin</font></li>
   
-				
-<!-- 				</security:authorize> -->
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
@@ -106,25 +100,11 @@
 					<li><a href="<c:url value="/index" />"><span
 							class="glyphicon glyphicon-shopping-user"></span>Welcome..${pageContext.request.userPrincipal.name}</a></li>
 
-<!-- 					<security:authorize access="hasRole('ROLE_USER')"> -->
-						
-<!-- 					</security:authorize> -->
 					<li><a href="<c:url value="/logout" />"><span
 							class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				</c:if>
 			</ul>
 
-
-		<%-- 	<ul class="nav navbar-nav navbar-right">
-
-				<c:if test="${pageContext.request.userPrincipal.name==null}">
-					<li><a href="<c:url value="/viewmycart.do" />"><span
-					
-							class="glyphicon glyphicon-log-user"></span> SignUp</a></li>
-					<li><a href="<c:url value="/loginProcess.do" />"><span
-							class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				</c:if>
-			</ul> --%>
 		</div>
 	</div>
 	</nav>

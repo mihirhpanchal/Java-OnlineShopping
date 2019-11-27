@@ -63,4 +63,18 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">  -->
  <!-- setting maximum upload size -->
 		<property name="maxUploadSize" value="10000000" />
  </bean>
+ 
+ <bean class = "org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    
+    <!-- <property name = "exceptionMappings">
+         <props>
+            <prop key ="org.hibernate.exception.ConstraintViolationException">
+               ExceptionPage
+            </prop>
+         </props>
+      </property> -->
+
+   <property name = "defaultErrorView" value = "error"/>
+
+</bean> 
 </beans>

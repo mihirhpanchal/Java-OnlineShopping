@@ -26,9 +26,6 @@
 <c:forEach items="${mycart.cartItem}" var="cartItem">
 <c:set var="total" value="${total + cartItem.price * cartItem.quantity }"></c:set>
 <tr>
-<%-- 				<td align="center"><a
-					href="${pageContext.request.contextPath }/cart/remove/${item.product.id }"
-					onclick="return confirm('Are you sure?')">Remove</a></td> --%>
 				<td>${cartItem.product_id }</td>
 				<td>${cartItem.product_name }</td>
 				<td>product photo</td>
@@ -36,7 +33,6 @@
 				<td>${cartItem.quantity }</td>
 				<td>${cartItem.price * cartItem.quantity }</td>
 			</tr>
-<%-- <c:out value="${cartItem.product_id}"/> &nbsp;<c:out value="${cartItem.quantity}"/>  &nbsp;<c:out value="${cartItem.price}"/><br>  --%>
 
 </c:forEach>
 
@@ -50,14 +46,7 @@
 	</table>
 	
 	<input type="submit" value="Confirm order">
-
+  <jsp:include page="/shared/footer.jsp" />
 </form>
-<%-- <c:forEach items="${myorder.orderItem}" var="orderItem">
-<c:out value="${orderItem.prodid}"/> &nbsp;<c:out value="${orderItem.quantity}"/>  &nbsp;<c:out value="${orderItem.price}"/><br> 
-<hr>
-</c:forEach> --%>
-
-
-<%-- <center><a href="${pageContext.request.contextPath }/placeorder.do" class="btn btn-default">Place Order</a></center> --%>
 </body>
 </html>

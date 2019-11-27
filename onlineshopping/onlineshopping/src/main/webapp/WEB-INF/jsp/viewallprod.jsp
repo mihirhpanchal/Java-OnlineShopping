@@ -53,8 +53,7 @@ System.out.println(products.size());
 	 <%
 	    for( Object[] product :products){
 	         String url = "singleproduct.do?prodid="+product[0]; 	
-	         String url1="http://localhost:8084/onlineshopping/download/image.do?fileName="+product[7]; 
-	         System.out.println("url1:"+url1);
+	         String url1="http://localhost:8084/onlineshopping/download/image.do?fileName="+product[7];
 	        /*  String url = "singleproduct.do?prodid="+product[0];  */	
 	    
 	 %>
