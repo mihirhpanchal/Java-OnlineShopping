@@ -92,6 +92,9 @@
     <form action="search.do">
       <input type="text" name="search" placeholder="Search..">
       <button type="submit"><i class="fa fa-search"></i></button>
+      
+      
+      
     </form>
   </div></li>
 				<%String uname = (String)session.getAttribute("username"); %>
