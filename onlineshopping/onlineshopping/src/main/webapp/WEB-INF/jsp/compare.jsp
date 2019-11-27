@@ -155,22 +155,11 @@ function magnify(imgID, zoom) {
     y = y - window.pageYOffset;
     return {x : x, y : y};
   }
-}
+
 </script>
 </head>
 <body>
 <div><%@ include file="/shared/navbar.jsp"%></div>
-<%-- <%
-int prodid;
-Product products = null;
- products = new ProductServiceImpl().compareProduct(products.getProduct_id());
-%> --%>
-	<hr><div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
-	<%-- <c:forEach items="${products}" var="product"> --%>
-	 <%-- <%
-	    for( Object[] product :products){
-	         String url = "singleproduct.do?prodid="+product[0]; 		    
-	 %> --%>
 	 
 </div>
 	 
