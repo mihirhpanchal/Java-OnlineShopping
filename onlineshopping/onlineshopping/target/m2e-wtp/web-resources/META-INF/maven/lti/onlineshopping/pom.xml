@@ -10,7 +10,7 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>5.2.21.RELEASE</spring.version>
+    <spring.version>5.2.22.RELEASE</spring.version>
     <java.version>1.8</java.version>
   </properties>
   
@@ -95,7 +95,7 @@
    <dependency>
 	<groupId>org.hibernate</groupId>
 	<artifactId>hibernate-core</artifactId>
-	<version>5.4.8.Final</version>
+	<version>5.4.24.Final</version>
    </dependency>
  <!--   		<dependency>
 			<groupId>org.springframework.security</groupId>
